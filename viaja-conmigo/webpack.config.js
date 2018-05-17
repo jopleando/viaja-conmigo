@@ -53,6 +53,7 @@ module.exports = {
   performance: {
     hints: false
   },
+
   devtool: '#eval-source-map'
 }
 
@@ -71,6 +72,15 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
+
+    new webpack.ProvidePlugin({
+      Vue: ['vue/dist/vue.esm.js', 'default'],
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      $: 'jquery',
+      moment: 'moment',
+    }),
+  
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })

@@ -1,10 +1,14 @@
-import Vue from 'vue'
+
 import VueRouter from 'vue-router'
-//import VueFire from 'vuefire'
+import VueFire from 'vuefire'
+
+
 import { routes } from './routes.js'
 import { auth } from './firebase'
 //import { storage } from './firebase'
 import App from './App.vue'
+import Vue from 'vue'
+
 
 Vue.use(VueRouter);
 
@@ -13,7 +17,7 @@ const router = new VueRouter ({
 	mode: 'history'
 })
 
-router.beforeEach((to, from, next)=>{
+/*router.beforeEach((to, from, next)=>{
 	let currentUser = auth.currentUser
   let isLogin = to.matched.some( record => record.name=="login")
   let requiresAuth = to.matched.some( record => record.meta.requiresAuth)
@@ -25,13 +29,16 @@ router.beforeEach((to, from, next)=>{
     next()
   }
 
-})
+})*/
 
-//Vue.use(VueFire)
+Vue.use(VueFire)
 Vue.use(VueRouter)
+
+
 
 var vm = new Vue({
   el: '#app',
   router,
   render: h => h(App)
-})
+
+});

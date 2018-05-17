@@ -7,16 +7,39 @@ import Profile from './components/Profile.vue'
 import Register from './components/Register.vue'
 import PostTrip from './components/Post-trip.vue'
 import Resset from './components/Resset.vue'
+import Messages from './components/Messages.vue'
+import ProfileUsers from './components/ProfileUsers.vue'
+import Settings from './components/Settings.vue'
+import Trips from './components/Trips.vue'
+import UserPanel from './components/UserPanel.vue'
 
 
 export const routes = [
-{path: '/', component: Home, name: 'homeLink'},
-{path: '/post', component: PostTrip, name: 'postLink'},
+{path: '/', components:{
+	default:Home,
+	'tripsLink' : Trips
+
+},
+name:'homeLink'},
+{path: '/post', component: PostTrip, name: 'postLink', props:true},
 {path: '/about', component: About, name: 'aboutLink'},
 {path: '/dates', component: Dates, name: 'datesLink'},
 {path: '/login', component: Login, name: 'loginLink'},
 {path: '/menu', component: Menu, name: 'menuLink'},
-{path: '/profile', component: Profile, name: 'profileLink'},
+{path: '/profile', component: Profile, name: 'profileLink',
+										children:[
+										{path:'user-panel', component:UserPanel, name:'panelLink'},
+										{path:'messages', component:Messages, name:'messagesLink'},
+										{path:'profiles', component:ProfileUsers, name:'profilesLink'},
+										{path:'settings', component:Settings, name:'settingsLink'},
+										{path:'trips-publicate', component:Trips, name:'tripsLink'},
+
+										
+
+
+
+
+										]},
 {path: '/register', component: Register, name: 'registerLink'},
 {path: '/resset', component: Resset, name: 'ressetLink'},
 {path:'*', redirect: '/'}

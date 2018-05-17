@@ -27,13 +27,23 @@ export default {
 </script>
 
 <style>
+
+#login{
+    background: url('../src/assets/login.jpg');
+    background-size: cover;
+    height: 546px
+    
+}
 #home{
-	/*background:url('../src/assets/home.jpg');*/
-	position: relative;
-  left: -16px;
-  height: 444px;
-  width: 1081px;
-  padding: 4%;
+	background:url('../src/assets/homepage.jpg')fixed;
+	background-size: cover;
+    position: relative;
+    /* top: 12px; */
+    left: -20px;
+    right: 5px;
+    height: 591px;
+    width: 1354px;;
+    padding: 4%;
 
 }
 
