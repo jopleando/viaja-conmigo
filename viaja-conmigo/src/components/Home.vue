@@ -7,22 +7,16 @@
 </template>
 
 <script>
-
-
-
-
 import NewPartner from '../components/NewPartner.vue'
 import {db} from '../firebase'
 import {storage} from '../firebase'
 let websitesRef=db.ref('websites')
 let listRef= db.ref('listCity')
-
 export default{
 	data(){
 		return{
 			websites:[],
 			listCity:[]
-
 		} 
 		
 		},
@@ -33,7 +27,6 @@ export default{
 			listCity:{
 				source:db.ref("listCity")
 			}
-
 		},
 		components:{
 			ppNew:NewPartner,

@@ -32,7 +32,7 @@
 
      <div class="form-group row">
 		      <select class="col-sm-6 form-control  border rounded" v-model="newPartner.sexSelected">
-            <option value="">¿Sexo de tu compañer@?</option>
+            <option value="">¿Genero de tu compañer@?</option>
             <option v-for="(user_obj, user) in userSex" :value="user" >{{user}}</option>
 		       </select>
      </div>
@@ -136,13 +136,13 @@ export default{
 		
        userSex:{
         	'Indiferente':{},
-        	'Mujer':{},
-        	'Hombre':{}
+        	'Femenino':{},
+        	'Masculino':{}
 
         },
 
         money:{
-        	'Indiferent':{},
+        	'Indiferente':{},
         	'0 - 10 $':{},
         	'10 - 30 $':{},
         	'30 - 50 $':{},
@@ -226,6 +226,7 @@ export default{
         },
 
         languages:{
+        	'Indiferente':{},
         	'Aleman':{},
         	'Arabe':{},
         	'Bengalí':{},
@@ -259,7 +260,7 @@ export default{
         	
         },
        cities : {
-
+       			'Indiferente':{},
 						'Afghanistan':{},
 						"Albania":{},
 						"Algeria":{},
@@ -561,7 +562,7 @@ h1{
 h5{
 
 	font-family: 'Shadows Into Light', cursive;
-	font-family: 'Shadows Into Light', cursive;
+	
     color: black;
     position: relative;
     right: 535px;

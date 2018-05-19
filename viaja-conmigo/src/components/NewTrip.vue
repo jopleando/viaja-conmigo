@@ -8,7 +8,7 @@
 	
      <div class=" form-group row">
       	<select class="col-sm-6 form-control  border rounded" v-model="newTrip.cityOrigin">
-          <option value="">¿Indica de que pais eres</option>
+          <option value="">Indica de que pais eres</option>
           <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
        </select>
      </div>
@@ -20,7 +20,7 @@
      </div>
      <div class="form-group row">
 		      <select class="col-sm-6 form-control  border rounded" v-model="newTrip.sexSelected">
-            <option value="">Indica tu sexo</option>
+            <option value="">Indica tu genero</option>
             <option v-for="(user_obj, user) in userSex" :value="user" >{{user}}</option>
 		       </select>
      </div>
@@ -33,7 +33,7 @@
      </div>
       <div class=" form-group row">
         <select class="col-sm-6 form-control  border rounded" v-model="newTrip.dayMoney">
-          <option class="options" value="">Indica tu presupuesto medio por dia</option>
+          <option class="options" value="">Indica cual seria tu presupuesto medio por dia</option>
           <option v-for="(mon_obj, mon) in money" :value="mon" >{{mon}}</option>
          </select>
      </div>
@@ -63,7 +63,7 @@
           <option class="options" value="">Año </option>
           <option v-for="(year_obj, year) in years" :value="year" >{{year}}</option>
         </select>
-		<button :disabled="sending" class="col-1 btn btn-1 ml-5 " type="button" v-on:click.prevent="addOptions">Buscar </button>
+		<button :disabled="sending" class="col-1 btn btn-1 ml-5 " type="button" v-on:click.prevent="addOptions">Publicalo </button>
 		</div>
 		
 	</form>
@@ -118,6 +118,7 @@ export default{
         },
 
         host:{
+        	'Indiferente':{},
         	'Albergue':{},
         	'Camping':{},
         	'Hotel':{},
@@ -192,6 +193,7 @@ export default{
         },
 
         languages:{
+        	'Indiferente':{},
         	'Aleman':{},
         	'Arabe':{},
         	'Bengalí':{},
@@ -226,6 +228,7 @@ export default{
         },
        cities : {
 
+       			'Indiferente':{},
 						'Afghanistan':{},
 						"Albania":{},
 						"Algeria":{},
@@ -489,7 +492,7 @@ export default{
 // }
 	created () {
 	      // value = snapshot.val() | key = snapshot.key
-	      websitesRef.on('value', function(snapshot){
+	      tripsRef.on('value', function(snapshot){
 	        console.log(snapshot.val());
 	       
 	        });

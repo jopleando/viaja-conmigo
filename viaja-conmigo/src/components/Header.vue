@@ -18,35 +18,14 @@
 			<ul class="nav ml-4">
 				<router-link :to="{name :'loginLink'}" tag="li" class="nav-item  mr-3"><a class="btn btn-1" href="#">Inicia sesión </a></router-link>
 				<router-link :to="{name :'registerLink'}" tag="li" class="nav-item mr-3"><a class="btn btn-1" href="#"> Registrate </a></router-link>
-				<router-link :to="{name :'profileLink'}" tag="li" class="nav-item mr-3"><a class="btn  btn-1 " href="#"> Nombre usuario </a> </a></router-link>
+				<router-link :to="{name :'panelLink'}" tag="li" class="nav-item mr-3"><a class="btn  btn-1 " href="#"> Perfil </a> </a></router-link>
 			</ul>
-		</div>
-       
+		</div>   
    </div>
-
 </nav>
 
 
-	<!--<div class="row header-top align-items-center ">
-			<nav class="col-md-2">
-				<a href="/" class="title navbar-brand"><img src="src/assets/logo1.png" class="img-fluid" alt="Responsive image" height="50px" width="50px"></a>
-				
-			</nav>
-		<div class="col-md-5 user-tools form-group mt-1">
-				<ul class="nav">
-						<router-link :to="{name :'postLink'}" tag="li" class="nav-item"><a class="nav-link" href="">Publicar viaje</a></router-link>
-						<router-link :to="{name :'aboutLink'}" tag="li" class="nav-item"><a class="nav-link" href="">Quienes somos</a></router-link>
-						<router-link :to="{name :'datesLink'}" tag="li" class="nav-item"><a class="nav-link" href="">Datos practicos</a></router-link>
-					</ul>
-		</div>
-		<div class="col-md-5 mt-1">
-				<ul class="nav">
-						<router-link :to="{name :'loginLink'}" tag="li" class="nav-item"><a class="nav-link" href=""> Inicia sesión </a></router-link>
-						<router-link :to="{name :'registerLink'}" tag="li" class="nav-item"><a class="nav-link" href=""> Registrarse </a></router-link>
-						<router-link :to="{name :'profileLink'}" tag="li" class="nav-item"><a class="nav-link" href=""> Nombre del usuario </a></router-link>
-					</ul>
-		</div>
-	</div>-->
+	
 </template>
 
 <script>

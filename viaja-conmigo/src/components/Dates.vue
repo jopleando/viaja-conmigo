@@ -1,9 +1,17 @@
 <template>
+  <div class="card row">
+  <article class="card-group-item col-md-3">
+    <header class="card-header"><h6 class="title">Pais salida</h6></header>
+    <div class="filter-content">
+      <div class="list-group list-group-flush" v-for="website in websites">
+        <a href="#" class="list-group-item">{{website.cityOrigin}} <span class="float-right badge badge-light round">142</span> </a>
+      </div>  <!-- list-group .// -->
+    </div>
+  </article> 
 <div class="container">
     <div class="row col-md-12 col-md-offset-2 custyle">
     <table class="table table-striped custab">
     <thead>
-    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
         <tr>
             <th>Pais salida</th>
             <th> Ciudad salida</th>
@@ -48,5 +56,6 @@
             </tr>-->
     </table>
     </div>
+</div>
 </div>
 </template>
