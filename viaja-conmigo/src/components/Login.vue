@@ -1,38 +1,21 @@
 <template>
-    <div class="row" id="login">
-        <div class="col-md-12">
-            
-                <div class="pass-reset">
-                    <label>
-                        Enter the email you signed up with</label>
-                    <input type="email" placeholder="Email" />
-                    <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
-                </div>
-            
-            <div class="wrap">
-                <p class="form-title">
-                    Sign In</p>
-                <form class="login">
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
-                <input type="submit" value="Sign In" class="btn btn-success btn-sm" />
-                <div class="remember-forgot">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" />
-                                    Remember Me
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 forgot-pass-content">
-                            <a href="javascript:void(0)" class="forgot-pass">Forgot Password</a>
-                        </div>
-                    </div>
-                </div>
+
+    <div class="row text-center" id="login">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="Email" required autofocus>
+                <input type="password" class="form-control" placeholder="Password" required>
+                <button class="btn btn-lg btn-1 btn-block" type="submit">
+                    Conectate</button>
+                
+                <a href="#" class="text-center new-account">Create una nueva cuenta </a>
+            <a href="#" class="text-center new-account">¿Has olvidado la contraseña? </a>
                 </form>
             </div>
+
         </div>
     </div>
   
@@ -67,180 +50,86 @@ methods:{
 }
 </script>
 <style>
-
-
-.wrap
+.form-signin
 {
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 99;
-}
-
-p.form-title
-{
-    font-family: 'Open Sans' , sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 5%;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-form
-{
-    width: 250px;
+    max-width: 330px;
+    padding: 15px;
     margin: 0 auto;
 }
-
-form.login input[type="text"], form.login input[type="password"]
+.form-signin .form-signin-heading, .form-signin .checkbox
 {
-    width: 100%;
-    margin: 0;
-    padding: 5px 10px;
-    background: 0;
-    border: 0;
-    border-bottom: 1px solid #FFFFFF;
-    outline: 0;
-    font-style: italic;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    color: #FFFFFF;
-    outline: 0;
-}
-
-form.login input[type="submit"]
-{
-    width: 100%;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-top: 16px;
-    outline: 0;
-    cursor: pointer;
-    letter-spacing: 1px;
-}
-
-form.login input[type="submit"]:hover
-{
-    transition: background-color 0.5s ease;
-}
-
-form.login .remember-forgot
-{
-    float: left;
-    width: 100%;
-    margin: 10px 0 0 0;
-}
-form.login .forgot-pass-content
-{
-    min-height: 20px;
-    margin-top: 10px;
     margin-bottom: 10px;
 }
-form.login label, form.login a
+.form-signin .checkbox
 {
-    font-size: 12px;
-    font-weight: 400;
-    color: #FFFFFF;
+    font-weight: normal;
 }
-
-form.login a
+.form-signin .form-control
 {
-    transition: color 0.5s ease;
-}
-
-form.login a:hover
-{
-    color: #2ecc71;
-}
-
-.pr-wrap
-{
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    display: none;
-}
-
-.show-pass-reset
-{
-    display: block !important;
-}
-
-.pass-reset
-{
-    margin: 0 auto;
-    width: 250px;
     position: relative;
-    margin-top: 22%;
-    z-index: 999;
-    background: #FFFFFF;
-    padding: 20px 15px;
-}
-
-.pass-reset label
-{
-    font-size: 12px;
-    font-weight: 400;
-    margin-bottom: 15px;
-}
-
-.pass-reset input[type="email"]
-{
-    width: 100%;
-    margin: 5px 0 0 0;
-    padding: 5px 10px;
-    background: 0;
-    border: 0;
-    border-bottom: 1px solid #000000;
-    outline: 0;
-    font-style: italic;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    color: #000000;
-    outline: 0;
-}
-
-.pass-reset input[type="submit"]
-{
-    width: 100%;
-    border: 0;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-top: 10px;
-    outline: 0;
-    cursor: pointer;
-    letter-spacing: 1px;
-}
-
-.pass-reset input[type="submit"]:hover
-{
-    transition: background-color 0.5s ease;
-}
-.posted-by
-{
-    position: absolute;
-    bottom: 26px;
-    margin: 0 auto;
-    color: #FFF;
-    background-color: rgba(0, 0, 0, 0.66);
+    font-size: 16px;
+    height: auto;
     padding: 10px;
-    left: 45%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-    
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f79e;;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.18);
+    position: relative;
+    left: 459px;
+    top: 61px;
+}
+
+
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
+
+
 </style>

@@ -1,90 +1,102 @@
 <template>
 
-	<div class="mb-3" id="home">
+	<div class="mb-1" id="home">
 		<div class="row">
-			<div class="col-xl-9 mx-auto text-center mb-5">
-			<h4> Compartir viajes, para vivir experiencias únicas</h4>
+			<div class="col-xl-9 mx-auto text-center mb-2 mr-4">
+			<h4 class=" principal-title mb-2 ml-3 mt-0"> Compartir viajes, para vivir experiencias únicas</h4>
 			</div>
 		</div>
 
-		<form class="searching mb-3 ">
+		<form class="searching mb-5">
 			<h5 class="ml-8">Busca a tu compañero ideal</h5>
 	
-		<div class=" form-group row">
-        <select class="col-sm-6 form-control  border rounded" v-model="newPartner.cityOrigin">
-          <option class="options" value="">Selecciona Pais de origen</option>
+	
+     <div class=" form-group row">
+      	<select class="col-sm-6 form-control  border rounded" v-model="newPartner.cityOrigin">
+          <option value="">¿De que pais eres?</option>
+          <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
+       </select>
+     </div>
+     <div class=" form-group row">
+        <select class="col-sm-6 form-control  border rounded" v-model="newPartner.cityDestination">
+          <option class="options" value="">¿A que pais te gustaría ir?</option>
           <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
          </select>
      </div>
-		<div class=" form-group row">
-			<!-- <label for="" class="col-sm-3 "> ¿Desde que ciudad?</label> -->
-			<input class="col-sm-6 form-control  border rounded" type="text" v-model="newPartner.countryOrigin" placeholder=" Escribe desde que ciudad">	
-		</div>
-
-		<div class=" form-group row">
-			<!--<label for="" class="col-sm-3 ">¿A que pais te gustaría  viajar</label>-->
-      <select class="col-sm-6 form-control  border rounded" v-model="newPartner.cityDestination">
-          <option value="">Selecciona Pais de destino</option>
+     <div class=" form-group row">
+        <select class="col-sm-6 form-control  border rounded" v-model="newPartner.cityOriginPartner">
+          <option class="options" value="">¿De que pais te gustaría que fuera tu compañer@?</option>
           <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
-       </select>
-      </div>
-      
-		<div class="form-group row">
-			
-			<input class="col-sm-6 form-control  border rounded" type="text" v-model="newPartner.countryDestination" placeholder="Escribe a que ciudad">
-		</div>
-		
-		<div class="form-group row">
+         </select>
+     </div>
+
+     <div class="form-group row">
 		      <select class="col-sm-6 form-control  border rounded" v-model="newPartner.sexSelected">
-            <option value="">Sexo de tu compañero</option>
+            <option value="">¿Sexo de tu compañer@?</option>
             <option v-for="(user_obj, user) in userSex" :value="user" >{{user}}</option>
 		       </select>
      </div>
-     <div class="form-group row mb-5" >
-			<input class="col-sm-2 form-control  border rounded " type="text" v-model="newPartner.travelDate" placeholder=" YYYY/MM/DD">
-			<input class="col-sm-2  " type="text" v-model="newPartner.travelDate1" placeholder="YYYY/MM/DD">
-			<button :disabled="sending" class="col-2 btn btn-primary ml-2 btn-block" type="button" v-on:click.prevent="addFilters">Buscar </button>
+
+      <div class=" form-group row">
+        <select class="col-sm-6 form-control  border rounded" v-model="newPartner.language">
+          <option class="options" value="">¿Que idioma te gustaría que hablara tu compañer@?</option>
+          <option v-for="(language_obj, language) in languages" :value="language" >{{language}}</option>
+         </select>
+     </div>
+      <div class=" form-group row">
+        <select class="col-sm-6 form-control  border rounded" v-model="newPartner.dayMoney">
+          <option class="options" value="">¿Cual es tu presupuesto medio por día?</option>
+          <option v-for="(mon_obj, mon) in money" :value="mon" >{{mon}}</option>
+         </select>
+     </div>
+     <div class=" form-group row">
+        <select class="col-sm-6 form-control  border rounded" v-model="newPartner.hostDay">
+          <option class="options" value="">¿Donde te gustaría hospedarte?</option>
+          <option v-for="(ho_obj, ho) in host" :value="ho" >{{ho}}</option>
+         </select>
+     </div>
+		
+		 <div class="form-group row mb-5" >
+		 	
+       <select class="col-sm-1 form-control  border rounded" v-model="newPartner.month1">
+          <option class="options" value="">Mes</option>
+          <option v-for="(month_obj, month) in months" :value="month" >{{month}}</option>
+       </select>
+       <select class="col-sm-1 form-control  border rounded" v-model="newPartner.year1">
+          <option class="options" value=""> Año</option>
+          <option v-for="(year_obj, year) in years" :value="year" >{{year}}</option>
+       </select>
+       <p class="mr-3 ml-3 mt-2"> - </p>
+       <select class="col-sm-1 form-control  border rounded" v-model="newPartner.month2">
+          <option class="options" value="">Mes</option>
+          <option v-for="(month_obj, month) in months" :value="month" >{{month}}</option>
+        </select>
+        <select class="col-sm-1 form-control  border rounded" v-model="newPartner.year2">
+          <option class="options" value="">Año </option>
+          <option v-for="(year_obj, year) in years" :value="year" >{{year}}</option>
+        </select>
+		<button :disabled="sending" class="col-1 btn btn-2 ml-5 " type="button" v-on:click.prevent="addFilters">Buscar </button>
 		</div>
-		<!--<div class="form-group row">
-			<label for="" class="col-sm-3">Descripción de tu compañero</label>
-			<input class= "form-control col-sm-6" aria-label="Large" type="text" v-model="newPartner.description" placeholder="">
-		</div>-->
 		
 	</form>	
-
-	<section class="features-icons bg-light text-center mt-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-screen-desktop m-auto text-primary"></i>
-              </div>
-              <h3>Fully Responsive</h3>
-              <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-layers m-auto text-primary"></i>
-              </div>
-              <h3>Bootstrap 4 Ready</h3>
-              <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-              <div class="features-icons-icon d-flex">
-                <i class="icon-check m-auto text-primary"></i>
-              </div>
-              <h3>Easy to Use</h3>
-              <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+	<section class="content-2 row mt-5">
+			<div class=" title-2 col-md-12 mb-5">
+				<h1 class="text-center text-end">Experiencias de otros viajeros </h1>
+				<h5 class=" title-3 text-center">Inspirate </h5>
+			</div>
+			
+			<div class="photos row">
+				<div class="col-md-4">
+				<img src="src/assets/image-1.jpeg" alt="" class="img-fluid rounded">
+			</div>
+			<div class="col-md-4">
+					<img src="src/assets/image-2.jpeg" alt="" class="img-fluid rounded" >
+				</div>
+				<div class="col-md-4">
+					<img src="src/assets/image-4.jpeg" alt="" class="img-fluid rounded" >
+				</div>
+			</div>
+	</section> 
 </div>
 
 </template>
@@ -94,6 +106,7 @@ import {db} from '../firebase'
 import {storage} from '../firebase'
 let websitesRef=db.ref('websites')
 let listRef= db.ref('listCity')
+
 export default{
 	firebase:{
 		websites:websitesRef,
@@ -105,21 +118,145 @@ export default{
 			moment:moment,
 			sending:false,
 			newPartner:{
-				'countryOrigin': "",
-				'countryDestination': "",
-				'travelDate':"",
-				"travelDate1":"",
+				
 				'sexSelected':"",
-				'description': "",
 				'cityOrigin':"",
-				'cityDestination':""
+				'cityDestination':"",
+				'cityOriginPartner':"",
+				'language':"",
+				'transports':"",
+				'dayMoney':"",
+				'hostDay':"",
+				'month1':"",
+				'year1':"",
+				'month2':"",
+				'year2':""
+
 			},
 		
        userSex:{
-        	'Indiferent':{},
-        	'Women':{},
-        	'Men':{}
+        	'Indiferente':{},
+        	'Mujer':{},
+        	'Hombre':{}
 
+        },
+
+        money:{
+        	'Indiferent':{},
+        	'0 - 10 $':{},
+        	'10 - 30 $':{},
+        	'30 - 50 $':{},
+        	'50 - 100 $':{},
+        	'+ 100 $': {}
+
+        },
+
+        host:{
+        	'Albergue':{},
+        	'Camping':{},
+        	'Hotel':{},
+        	'Hostal':{},
+        	'Casas privadas':{},
+        	'Otros':{}
+        	
+
+        },
+        days:{
+        	'1':{},
+        	'2':{},
+        	'3':{},
+        	'4':{},
+        	'5':{},
+        	'6':{},
+        	'7':{},
+        	'8':{},
+        	'9':{},
+        	'10':{},
+        	'11':{},
+        	'12':{},
+        	'13':{},
+        	'14':{},
+        	'15':{},
+        	'16':{},
+        	'17':{},
+        	'18':{},
+        	'19':{},
+        	'20':{},
+        	'21':{},
+        	'22':{},
+        	'23':{},
+        	'24':{},
+        	'25':{},
+        	'26':{},
+        	'27':{},
+        	'28':{},
+        	'29':{},
+        	'30':{}
+
+        },
+        months:{
+        	'Enero':{},
+        	'Febrero':{},
+        	'Marzo':{},
+        	'Abril':{},
+        	'Mayo':{},
+        	'Junio':{},
+        	'Julio':{},
+        	'Agosto':{},
+        	'Septiembre':{},
+        	'Octubre':{},
+        	'Noviembre':{},
+        	'Diciembre':{}
+
+        },
+
+       years:{
+      	'2018':{},
+      	'2019':{},
+      	'2020':{},
+      	'2021':{},
+      	'2022':{},
+      	'2023':{},
+      	'2024':{},
+      	'2025':{},
+      	'2026':{},
+      	'2027':{},
+
+
+        },
+
+        languages:{
+        	'Aleman':{},
+        	'Arabe':{},
+        	'Bengalí':{},
+        	'Chino mandarín':{},
+        	'Coreano':{},
+        	'Español':{},
+        	'Francés':{},
+        	'Hindi':{},
+        	'Inglés':{},
+        	'Italiano':{},
+        	'Japones':{},
+        	'Maratí':{},
+        	'Portugues':{},
+        	'Ruso':{},
+        	'Tamil':{},
+        	'Télugu':{},
+        	'Turco':{},
+        	'Vietnamita':{},
+        	'Urdu':{},
+        	'Wu':{},
+        	'Otro':{}
+        },
+
+        transport:{
+        	'Avión':{},
+        	'Auto Stop':{},
+        	'Barco':{},
+        	'Coche, moto..':{},
+        	'Tren, Ave':{},
+        	'Otros':{},
+        	
         },
        cities : {
 
@@ -363,27 +500,30 @@ export default{
 			sexSelected: this.sexSelected,
 			description: this.description,
 			cityOrigin: this.cityOrigin,
-			cityDestination: this.cityDestination
+			cityDestination: this.cityDestination,
+			cityOriginPartner:this.cityOriginPartner,
+			language:this.language,
+			transports:this.transports,
+			dayMoney: this.dayMoney,
+			hostDay:this.hostDay,
+			month1:this.month1,
+			month2:this.month2,
+			year1:this.year1,
+			year2:this.year2
+			
 
 
 			}
 		})   
 		
-		this.$router.push({name: 'datesLink', params:{ newPartner: this.newPartner}}) 
+		this.$router.push({name: 'shareLink', params:{ newPartner: this.newPartner}}) 
 	},
 	
 	 
    
 // 	   
 // }
-	created () {
-	      // value = snapshot.val() | key = snapshot.key
-	      websitesRef.on('value', function(snapshot){
-	        console.log(snapshot.val());
-	       
-	        });
-	    
-	}
+	
 
 	}
 }
@@ -398,28 +538,114 @@ export default{
 
 @import url('https://fonts.googleapis.com/css?family=Alef');
 
+h1{
+	  font-weight: 800;
+    font-size: 29px;
+    letter-spacing: -0.6px;
+    color: black;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.subtitle{
+	  font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.6px;
+    color: #484848;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    position: relative;
+    top:10px;
+    left:130px;
+}
 
 h5{
 
 	font-family: 'Shadows Into Light', cursive;
+	font-family: 'Shadows Into Light', cursive;
+    color: black;
+    position: relative;
+    right: 535px;
 
 }
-h4{
+.title-3{
+	font-size:25px;
+	font-size: 25px;
+  position: relative;
+  top: -135px;
+  left: 10px;
+}
+.principal-title{
 	font-family: 'Shadows Into Light', cursive;
 	font-size: 40px;
+	position: relative;
+  top: -27px;
+  left: 184px;
+  color:black;
 }
 
 .searching{
+	position: relative;
+  top: -32px;
+  left: 39px;
 	
 	
+}
 
-	
-	
+.text-end{
+	  text-align: center!important;
+    position: relative;
+    top: -130px;
+    left: 27px;
+}
+
+.photos{
+	  background-color: #eeeeeea1;
+    /* opacity: 1.8; */
+    max-width: 92%;
+    margin: -13px auto;
+    padding: 20px 30px;
+    width: 1487px;
+    position: relative;
+    top: -146px;
+}
+    
+
+
+
+.btn {
+    flex: 1 1 auto;
+    /* margin: 10px; */
+    /* padding: 30px; */
+    text-align: center;
+    /* text-transform: uppercase; */
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2); */
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+ }
+
+/* Demo Stuff End -> */
+
+/* <- Magic Stuff Start */
+
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn-2 {
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
 
 .features-icons{
 	position: relative;
 	top:40px;
+}
+
+.content-2{
+	    position: relative;
+    top: 115px;
 }
 	
 </style>

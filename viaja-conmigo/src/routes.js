@@ -12,6 +12,7 @@ import ProfileUsers from './components/ProfileUsers.vue'
 import Settings from './components/Settings.vue'
 import Trips from './components/Trips.vue'
 import UserPanel from './components/UserPanel.vue'
+import Share from './components/Share.vue'
 
 
 export const routes = [
@@ -26,6 +27,7 @@ name:'homeLink'},
 {path: '/dates', component: Dates, name: 'datesLink'},
 {path: '/login', component: Login, name: 'loginLink'},
 {path: '/menu', component: Menu, name: 'menuLink'},
+{path:'/share', component: Share, name: 'shareLink'},
 {path: '/profile', component: Profile, name: 'profileLink',
 										children:[
 										{path:'user-panel', component:UserPanel, name:'panelLink'},

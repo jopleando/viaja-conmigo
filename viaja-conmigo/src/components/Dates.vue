@@ -1,19 +1,19 @@
 <template>
-	<div>
-    <table class="table">
-      <thead class="thead-default">
+<div class="container">
+    <div class="row col-md-12 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+    <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a>
         <tr>
-            <th>Pais origen</th>
-            <th>Origen</th>
-            <th> Destino </th>
-            <th> Ciudad destino</th>
-            <th> Fecha ida</th>
-            <th> Vuelta</th>
-            <th> Sexo</th>
-           
+            <th>Pais salida</th>
+            <th> Ciudad salida</th>
+            <th>Pais destino</th>
+            <th>Ciudad destino</th>
+            <th>Sexo compañero</th>
+            <th>Fechas</th>
+            <th class="text-center">Action</th>
         </tr>
-       </thead>
-       <tbody>
+    </thead>
         <tr v-for="website in websites">
           <td>{{website.cityOrigin}}</td>
           <td>{{website.countryOrigin}}</td>
@@ -23,68 +23,30 @@
           <td>{{website.travelDate1}}</td>
           <td>{{website.sexSelected}}</td>
           <td>{{website.description}}</td> 
-        </tr>    
-       </tbody>
-    </table>
-    <table class="table">
-      <thead class="thead-default">
-        <tr>
-            <th>Origen</th>
         </tr>
-       </thead>
-       <tbody>
-        <tr v-for="list in listCity">
-          <td>{{list.menuSelected}}</td>
-          <td>{{list.selecteduserCountry}}</td>
-          <td>{{list.selecteduserCity}}</td>
-        
-        </tr>    
-       </tbody>
+          <td clas="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> X </a></td>
+          <td clas="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> X </a></td>
+          <td clas="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> X </a></td>
+          <td clas="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> X </a></td>
+          <td clas="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> X </a></td>
+          <td clas="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> X </a></td>
+          <td clas="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> X </a></td>
+          
+          <!--<tr v-for=>
+                <td>Origen</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> X </a></td>
+            </tr>
+            <tr>
+                <td>Ciudad Origen</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Editar</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> X </a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Blogs</td>
+                <td>Parent Blogs</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+            </tr>-->
     </table>
+    </div>
 </div>
-   
 </template>
-
-
-<script>
-
-import {db} from '../firebase'
-import {storage} from '../firebase'
-let websitesRef=db.ref('websites')
-let listRef= db.ref('listCity')
-
-
-export default{
-  
-   
-data(){
-    return{
-        sending:false,
-        websites:[],
-        listCity:[]
-
-
-        
-     }
- },
- firebase:{
-  websites:{
-    source:db.ref("websites")
-  },
-  listCity:{
-    source:db.ref("listCity")
-  }
- }
-}
-    /*ready: function () {
-    
-    var _this = this
-    websitesRef.on('value', function(snapshot){
-      _this.postLink = snapshot.val()
-    }
-  */
-
-
-
-</script>
-
