@@ -12,6 +12,7 @@
 	
 	
      <div class=" form-group row">
+     	<!--<input type="range" name="points" min="0" max="50">-->
       	<select class="col-sm-6 form-control  border rounded" v-model="newPartner.cityOrigin">
           <option value="">¿De que pais eres?</option>
           <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
@@ -57,8 +58,12 @@
      </div>
 		
 		 <div class="form-group row mb-5" >
+<input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newPartner.year1">
+<p class="mr-3 ml-3 mt-2"> - </p>
+<input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newPartner.year2">
 		 	
-       <select class="col-sm-1 form-control  border rounded" v-model="newPartner.month1">
+       <!--<select class="col-sm-1 form-control  border rounded" v-model="newPartner.month1">
+
           <option class="options" value="">Mes</option>
           <option v-for="(month_obj, month) in months" :value="month" >{{month}}</option>
        </select>
@@ -66,7 +71,7 @@
           <option class="options" value=""> Año</option>
           <option v-for="(year_obj, year) in years" :value="year" >{{year}}</option>
        </select>
-       <p class="mr-3 ml-3 mt-2"> - </p>
+       
        <select class="col-sm-1 form-control  border rounded" v-model="newPartner.month2">
           <option class="options" value="">Mes</option>
           <option v-for="(month_obj, month) in months" :value="month" >{{month}}</option>
@@ -74,7 +79,7 @@
         <select class="col-sm-1 form-control  border rounded" v-model="newPartner.year2">
           <option class="options" value="">Año </option>
           <option v-for="(year_obj, year) in years" :value="year" >{{year}}</option>
-        </select>
+        </select>-->
 		<button :disabled="sending" class="col-1 btn btn-2 ml-5 " type="button" v-on:click.prevent="addFilters">Buscar </button>
 		</div>
 		
@@ -127,9 +132,9 @@ export default{
 				'transports':"",
 				'dayMoney':"",
 				'hostDay':"",
-				'month1':"",
+				//'month1':"",
 				'year1':"",
-				'month2':"",
+				//'month2':"",
 				'year2':""
 
 			},
@@ -159,69 +164,6 @@ export default{
         	'Casas privadas':{},
         	'Otros':{}
         	
-
-        },
-        days:{
-        	'1':{},
-        	'2':{},
-        	'3':{},
-        	'4':{},
-        	'5':{},
-        	'6':{},
-        	'7':{},
-        	'8':{},
-        	'9':{},
-        	'10':{},
-        	'11':{},
-        	'12':{},
-        	'13':{},
-        	'14':{},
-        	'15':{},
-        	'16':{},
-        	'17':{},
-        	'18':{},
-        	'19':{},
-        	'20':{},
-        	'21':{},
-        	'22':{},
-        	'23':{},
-        	'24':{},
-        	'25':{},
-        	'26':{},
-        	'27':{},
-        	'28':{},
-        	'29':{},
-        	'30':{}
-
-        },
-        months:{
-        	'Enero':{},
-        	'Febrero':{},
-        	'Marzo':{},
-        	'Abril':{},
-        	'Mayo':{},
-        	'Junio':{},
-        	'Julio':{},
-        	'Agosto':{},
-        	'Septiembre':{},
-        	'Octubre':{},
-        	'Noviembre':{},
-        	'Diciembre':{}
-
-        },
-
-       years:{
-      	'2018':{},
-      	'2019':{},
-      	'2020':{},
-      	'2021':{},
-      	'2022':{},
-      	'2023':{},
-      	'2024':{},
-      	'2025':{},
-      	'2026':{},
-      	'2027':{},
-
 
         },
 

@@ -22,13 +22,13 @@ export const routes = [
 
 },
 name:'homeLink'},
-{path: '/post', component: PostTrip, name: 'postLink', props:true},
-{path: '/about', component: About, name: 'aboutLink'},
+{path: '/post', component: PostTrip, name: 'postLink', props:true, meta: { requiresAuth: true }},
+{path: '/about', component: About, name: 'aboutLink',},
 {path: '/dates', component: Dates, name: 'datesLink'},
 {path: '/login', component: Login, name: 'loginLink'},
-{path: '/menu', component: Menu, name: 'menuLink'},
-{path:'/share', component: Share, name: 'shareLink'},
-{path: '/profile', component: Profile, name: 'profileLink',
+{path: '/menu', component: Menu, name: 'menuLink', meta: { requiresAuth: true }},
+{path:'/share', component: Share, name: 'shareLink', meta: { requiresAuth: true }},
+{path: '/profile', component: Profile, meta: { requiresAuth: true }, name: 'profileLink',
 										children:[
 										{path:'user-panel', component:UserPanel, name:'panelLink'},
 										{path:'messages', component:Messages, name:'messagesLink'},
@@ -46,3 +46,6 @@ name:'homeLink'},
 {path: '/resset', component: Resset, name: 'ressetLink'},
 {path:'*', redirect: '/'}
 ]
+
+
+

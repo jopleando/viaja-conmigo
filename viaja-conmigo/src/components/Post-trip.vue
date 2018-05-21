@@ -14,6 +14,7 @@
 import NewTrip from '../components/NewTrip.vue'
 import {db} from '../firebase'
 import {storage} from '../firebase'
+import {auth} from './../firebase'
 let tripsRef=db.ref('trips')
 
 
@@ -35,7 +36,18 @@ export default{
     components:{
       ppTrip:NewTrip,
   
-  }
+  },
+  computed:{
+      currentUserId: function(){
+
+          if(auth.currentUser){
+                    console.debug(auth.currentUser.uid);
+              return auth.currentUser.uid;
+        }else{
+              return null;
+        }
+      }
+    }
 }
 </script>
 

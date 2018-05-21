@@ -46,23 +46,9 @@
 		
 		 <div class="form-group row mb-5" >
 		 	
-       <select class="col-sm-1 form-control  border rounded" v-model="newTrip.month1">
-          <option class="options" value="">Mes</option>
-          <option v-for="(month_obj, month) in months" :value="month" >{{month}}</option>
-       </select>
-       <select class="col-sm-1 form-control  border rounded" v-model="newTrip.year1">
-          <option class="options" value=""> Año</option>
-          <option v-for="(year_obj, year) in years" :value="year" >{{year}}</option>
-       </select>
-       <p class="mr-3 ml-3 mt-2"> - </p>
-       <select class="col-sm-1 form-control  border rounded" v-model="newTrip.month2">
-          <option class="options" value="">Mes</option>
-          <option v-for="(month_obj, month) in months" :value="month" >{{month}}</option>
-        </select>
-        <select class="col-sm-1 form-control  border rounded" v-model="newTrip.year2">
-          <option class="options" value="">Año </option>
-          <option v-for="(year_obj, year) in years" :value="year" >{{year}}</option>
-        </select>
+       <input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newTrip.year1">
+<p class="mr-3 ml-3 mt-2"> - </p>
+<input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newTrip.year2">
 		<button :disabled="sending" class="col-1 btn btn-1 ml-5 " type="button" v-on:click.prevent="addOptions">Publicalo </button>
 		</div>
 		

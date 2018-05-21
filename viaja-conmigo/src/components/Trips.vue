@@ -7,7 +7,7 @@
               <div class="panel-heading">
                 <div class="row">
                   <div class="col col-xs-6 mb-2">
-                    <h3 class="panel-title "> Tu viaje publicado </h3>
+                    <h3 class="panel-title-1 "> Tu viaje publicado </h3>
                   </div>
                 </div>
               </div>
@@ -38,8 +38,8 @@
                                 <td>{{trip.language}}</td>
                                 <td>{{trip.dayMoney}}</td>
                                 <td>{{trip.hostDay}}</td>
-                                <td>{{trip.month1}}/{{trip.year1}}</br
-                                  > a </br>{{trip.month2}}/{{trip.year2}}</td>
+                                <td>{{trip.year1}}</br
+                                  >{{trip.year2}}</td>
                               
                 </tr>
               </tbody>
@@ -92,9 +92,10 @@ data(){
 <style>
   @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 
-.panel-title{
+.panel-title-1{
   font-family: 'Shadows Into Light', cursive;
   color:black;
+  font-family: 20px;
 }
   .panel-table .panel-body{
   padding:0;

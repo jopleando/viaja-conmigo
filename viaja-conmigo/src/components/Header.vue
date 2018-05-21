@@ -7,7 +7,6 @@
       <h2 class="first-title">Viaja-conmigo</h2>
      <div class="user-tools form-group mt-1 ml-5">
 			<ul class="nav ml-4">
-				<router-link :to="{name :'postLink'}" tag="li" class="nav-item"><a class="nav-link" href="">Publicar viaje</a></router-link>
 				<router-link :to="{name :'shareLink'}" tag="li" class="nav-item"><a class="nav-link" href="">Compartir</a></router-link>
 				<router-link :to="{name :'datesLink'}" tag="li" class="nav-item"><a class="nav-link" href="">Datos practicos</a></router-link>
 				<router-link :to="{name :'aboutLink'}" tag="li" class="nav-item"><a class="nav-link" href="">Quienes somos</a></router-link>
@@ -16,8 +15,9 @@
 		</div>
 		<div class=" mt-1 ml-4 ">
 			<ul class="nav ml-4">
-				<router-link :to="{name :'loginLink'}" tag="li" class="nav-item  mr-3"><a class="btn btn-1" href="#">Inicia sesión </a></router-link>
-				<router-link :to="{name :'registerLink'}" tag="li" class="nav-item mr-3"><a class="btn btn-1" href="#"> Registrate </a></router-link>
+        <router-link :to="{name :'postLink'}" tag="li" class="nav-item mr-3"><a class="btn btn-1" href="">+ Publicar viaje</a></router-link>
+				<!--<router-link :to="{name :'loginLink'}" tag="li" class="nav-item  mr-3"><a class="btn btn-1" href="#">Inicia sesión </a></router-link>
+				<router-link :to="{name :'registerLink'}" tag="li" class="nav-item mr-3"><a class="btn btn-1" href="#"> Registrate </a></router-link>-->
 				<router-link :to="{name :'panelLink'}" tag="li" class="nav-item mr-3"><a class="btn  btn-1 " href="#"> Perfil </a> </a></router-link>
 			</ul>
 		</div>   
@@ -55,9 +55,9 @@ export default{
 
 .first-title{
 		font-family: 'Shadows Into Light', cursive;
-    font-size: 26px;
+    font-size: 28px;
     position: relative;
-    left: -43px;
+    left: -135px;
     top: 3px;
     color: black;
 

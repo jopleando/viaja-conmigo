@@ -168,12 +168,14 @@ p{
     left: 141px;
     top: -36px;
 }
-h6.description{
+.description{
 	font-size: 25px;
 	letter-spacing: 2px;
 	color: black;
 	padding-bottom: 5px;
 	font-family: 'Shadows Into Light', cursive;
+	position: relative;
+  left:24px;
 }
 .profile{
 	margin-top: 25px;

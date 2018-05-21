@@ -8,10 +8,10 @@
           <button class="btn btn-1 button-exit" @click="logout">Cerrar sesión </button>
         </div>
 
-        <div class=" profile col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+        <div class=" profile-1 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Beatriz Alvarez </h3>
+              <h3 class="panel-title-2">Beatriz </h3>
             </div>
             <div class="panel-body">
               <div class="row">               
@@ -122,7 +122,8 @@
           this.$router.replace({name: 'loginLink'})
         })
       }
-    }
+    },
+    
   }
 </script>
 <style>
@@ -141,14 +142,14 @@
     left: 16px;
     font-size: 51px;
 }
-.panel-title{
+.panel-title-2{
 		font-family: 'Shadows Into Light', cursive;
     position: relative;
     top: -37px;
     left: -77px;
     font-size: 48px;
 }
-.profile{
+.profile-1{
 	  position: relative;
     top: -144px;
     /* left: 40px; */

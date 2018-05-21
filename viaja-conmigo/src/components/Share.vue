@@ -33,8 +33,12 @@
                   </thead>
                   <tbody id="myTable">
                 
-                          <tr v-for="website in websites">
+                          <tr v-for="website in websites":key="website['.key']">
                             <td align="center">
+                              <button class="btn btn-sm btn-outline-success"
+                        type="button"
+                        v-on:click.prevent="deleteFilter(website)"
+                        >-</button>
                               <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
@@ -45,7 +49,7 @@
                                 <td>{{website.language}}</td>
                                 <td>{{website.dayMoney}}</td>
                                 <td>{{website.hostDay}}</td>
-                                <td>{{website.month1}}/{{website.year1}}</br>{{website.month2}}/{{website.year2}}</td>
+                                <td>{{website.year1}}</br>{{website.year2}}</td>
                             
                           </tr>
                         </tbody>
@@ -62,6 +66,7 @@
 <script>
 
 import {db} from '../firebase'
+import {auth} from './../firebase'
 import {storage} from '../firebase'
 let websitesRef=db.ref('websites')
 let listRef= db.ref('listCity')
@@ -74,14 +79,10 @@ data(){
     return{
         sending:false,
         websites:[],
-
-
-        
-
-
         
      }
  },
+  
  firebase:{
   websites:{
     source:db.ref("websites")
@@ -90,24 +91,24 @@ data(){
 
  }, 
  methods:{
-  
-  edit(){
-
+  deleteFilter(website){
+    websitesRef.child(website.id).remove()
   }
+  
  },
- deleteFilter(website){
-        this.websites.splice(this.websites.indexOf(website))
-      } 
-
+ created(){
+      websitesRef.on('child_removed',snapshot=>{
+        const deleteFilter = this.websites.find(website=> website.id===snapshot.key)
+        const index= this.websites.indexOf(deleteFilter)
+        this.websites.splice(0, 3)
+      })
     }
+  
+   
+  }
 
-    /*ready: function () {
-    
-    var _this = this
-    websitesRef.on('value', function(snapshot){
-      _this.postLink = snapshot.val()
-    }
-  */
+
+ 
 
 
 

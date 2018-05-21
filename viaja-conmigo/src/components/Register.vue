@@ -1,85 +1,155 @@
 <template>
-    <div class="container">
-        <div class="card card-container">
-            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" @submit="login">
-                <span id="reauth-email" class="reauth-email"></span>
-                <h4>Login</h4>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus v-model="email">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required v-model="password">
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Log in</button>
-                <router-link :to="{'name':'reset-password'}"><a class="nav-link">Forgot password?</a></router-link>
-                <router-link :to="{'name':'register'}"><a class="nav-link">Don´t have an account?</a></router-link>
-                <span v-if="errorMsg !== ''" class="login-error-msg">{{ errorMsg }}</span>
-            </form><!-- /form -->
-        </div><!-- /card-container -->
-    </div><!-- /container -->
+    
+    <div class="row text-center" id="login">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+                <form class="form-signin" @submit="createUser">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <h2>Create una cuenta </h2>
+                   <!-- <input type="name"  class="form-control" placeholder="Nombre" required autofocus v-model="name">
+                    <input type="lastName"  class="form-control" placeholder="Apellidos" required autofocus v-model="lastName">
+                    <input type="gender"  class="form-control" placeholder="Genero" required autofocus v-model="gender">
+                     <input type="date"  class="form-control" placeholder="Fecha de nacimiento" required autofocus v-model="date">
+                     <input type="description"  class="form-control" placeholder="Pequeña descripción sobre ti" required v-model="description">-->
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus v-model="email">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required v-model="password">
+                    
+                    <button class="btn btn-lg btn-1 btn-block" type="submit">Registrate</button>
+                     <router-link :to="{'name':'loginLink'}"><a class="nav-link"> Vuelve atrás </a></router-link>
+                    <span v-if="errorMsg !== ''" class="login-error-msg">{{ errorMsg }}</span>
+                    <span v-if="successMsg !== ''" class="login-success-msg">{{ successMsg }}</span>
+                </form><!-- /form -->
+            </div><!-- /card-container -->
+        </div>
+    </div>
 </template>
 
 <script>
-
 import {auth} from '../firebase'
+import {db} from '../firebase'
+let registerRef= db.ref('register')
 
 export default {
+
+    firebase:{
+        register:registerRef,
+    },
     data(){
         return{
+            
+           /* name:"",
+            lastName:"",
+            gender:"",
+            date:"",
+            description:"",*/
             email: "",
-            password:"",
+            password: "",
+            successMsg: "",
             errorMsg: "",
         }
     },
     methods:{
-        login(){
-            auth.signInWithEmailAndPassword(this.email,this.password)
-            .then((user)=>{
-                this.$router.replace({name: 'homeLink'});
+        createUser(){
+            auth.createUserWithEmailAndPassword(this.email,this.password).then((user)=>{
+
+                this.successMsg = "New user created successfully!";
+                this.errorMsg = "";
+
+                setTimeout(function(){this.$router.replace({name:'panelLink'})}.bind(this),5000);
+
+
             })
-            .catch((error)=>{
+            .catch((err)=>{
                 this.errorMsg = err.message;
             })
+        
+
+    }
+    /*addUser(){
+        this.sending=true
+            registerRef.push(this.name, this.lastname,this.gender,this.date, this.description).then(()=>{
+                this.sending=false
+         
+
+            })
+            this.$router.push({name: 'panelLink', params:{ newPartner: this.newPartner}})
+            }*/
         }
     }
-}
+
+
 </script>
 
 
 <style scoped>
-
-.card-container.card {
-    max-width: 350px;
-    padding: 40px 40px;
+h2{
+    color:black;
+    font-family: 'Shadows Into Light', cursive;
 }
 
-.btn {
-    font-weight: 700;
-    height: 36px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
 }
-
-/*
- * Card component
- */
-.card {
-    background-color: #F7F7F7;
-    /* just in case there no content*/
-    padding: 20px 25px 30px;
-    margin: 0 auto 25px;
-    margin-top: 50px;
-    /* shadows and rounded borders */
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f79e;;
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.18);
+    position: relative;
+    left: 459px;
+    top: 61px;
 }
 
-.profile-img-card {
+
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
     width: 96px;
     height: 96px;
     margin: 0 auto 10px;
@@ -88,104 +158,14 @@ export default {
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
-
-/*
- * Form styles
- */
-.profile-name-card {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px 0 0;
-    min-height: 1em;
+.need-help
+{
+    margin-top: 10px;
 }
-
-.reauth-email {
+.new-account
+{
     display: block;
-    color: #404040;
-    line-height: 2;
-    margin-bottom: 10px;
-    font-size: 14px;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    margin-top: 10px;
 }
 
-.form-signin #inputEmail,
-.form-signin #inputPassword {
-    direction: ltr;
-    height: 44px;
-    font-size: 16px;
-}
-
-.form-signin input[type=email],
-.form-signin input[type=password],
-.form-signin input[type=text],
-.form-signin button {
-    width: 100%;
-    display: block;
-    margin-bottom: 10px;
-    z-index: 1;
-    position: relative;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.form-signin .form-control:focus {
-    border-color: rgb(104, 145, 162);
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-}
-
-.btn.btn-signin {
-    /*background-color: #4d90fe; */
-    background-color: rgb(104, 145, 162);
-    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
-    padding: 0px;
-    font-weight: 700;
-    font-size: 14px;
-    height: 36px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    -o-transition: all 0.218s;
-    -moz-transition: all 0.218s;
-    -webkit-transition: all 0.218s;
-    transition: all 0.218s;
-}
-
-.btn.btn-signin:hover,
-.btn.btn-signin:active,
-.btn.btn-signin:focus {
-    background-color: rgb(12, 97, 33);
-}
-
-.forgot-password {
-    color: rgb(104, 145, 162);
-}
-
-.forgot-password:hover,
-.forgot-password:active,
-.forgot-password:focus{
-    color: rgb(12, 97, 33);
-}
-
-.login-error-msg{
-    display: block;
-    color: #FFF;
-    font-weight: bold;
-    padding: 10px;
-    background-color: #F25930;
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border: 0px solid #000000;
-}
 </style>

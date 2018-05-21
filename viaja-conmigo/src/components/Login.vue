@@ -3,19 +3,17 @@
     <div class="row text-center" id="login">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
             <div class="account-wall">
-                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                    alt="">
-                <form class="form-signin">
-                <input type="text" class="form-control" placeholder="Email" required autofocus>
-                <input type="password" class="form-control" placeholder="Password" required>
+                <form class="form-signin" @submit="login">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus v-model="email">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required v-model="password">
                 <button class="btn btn-lg btn-1 btn-block" type="submit">
                     Conectate</button>
-                
-                <a href="#" class="text-center new-account">Create una nueva cuenta </a>
-            <a href="#" class="text-center new-account">¿Has olvidado la contraseña? </a>
+                <router-link :to="{'name':'ressetLink'}"><a class="nav-link">¿Olvidaste la contraseña?</a></router-link>
+                <router-link :to="{'name':'registerLink'}"><a class="nav-link">¿No tienes una cuenta?</a></router-link>
+                <span v-if="errorMsg !== ''" class="login-error-msg">{{ errorMsg }}</span>
                 </form>
             </div>
-
         </div>
     </div>
   
@@ -24,31 +22,30 @@
 </template>
 
 <script>
-	
-import { auth } from '../firebase'
-
+import {auth} from '../firebase'
 
 export default {
-data(){
-    return{
-        email: "",
-        password:""
+    data(){
+        return{
+            email: "",
+            password:"",
+            errorMsg: "",
+        }
+    },
+    methods:{
+        login(){
+            auth.signInWithEmailAndPassword(this.email,this.password)
+            .then((user)=>{
+                this.$router.replace({name: 'homeLink'});
+            })
+            .catch((error)=>{
+                this.errorMsg = err.message;
+            })
+        }
     }
-},
-methods:{
-    login(){
-        auth.signInWithEmailAndPassword(this.email,this.password)
+}
+</script>	
 
-        .then((user)=>{
-            this.$router.replace("home")
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-    }
-}
-}
-</script>
 <style>
 .form-signin
 {
