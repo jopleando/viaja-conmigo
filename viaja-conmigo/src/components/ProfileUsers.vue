@@ -84,7 +84,7 @@
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
-	                <img src="http://nabeel.co.in/files/bootsnipp/team/8.jpg" class="img-fluid">
+	                <img src="http://nabeel.co.in/files/bootsnipp/team/8.jpg" class="i img-fluid">
 	                <ul class="text-center">
 	                  <a href="#">Mira su perfil</a>
 	                </ul>
@@ -166,16 +166,17 @@ p{
     padding:75px 0;
     position: relative;
     left: 141px;
-    top: -36px;
+    top: 10px;
 }
 .description{
-	font-size: 25px;
-	letter-spacing: 2px;
-	color: black;
-	padding-bottom: 5px;
-	font-family: 'Shadows Into Light', cursive;
-	position: relative;
-  left:24px;
+	   font-size: 37px;
+    letter-spacing: 2px;
+    color: black;
+    padding-bottom: 5px;
+    font-family: 'Shadows Into Light', cursive;
+    position: relative;
+    left: 24px;
+    top: -27px;
 }
 .profile{
 	margin-top: 25px;
@@ -190,10 +191,15 @@ p{
 	font-weight: lighter;
 	margin-top: 5px;
 }
+
+.i{
+
+}
 .profile .img-box{
 	opacity: 1;
 	display: block;
 	position: relative;
+
 }
 .profile .img-box:after{
 	content:"";
@@ -204,6 +210,7 @@ p{
 	left: 0;
 	top: 0;
 	bottom: 0;
+	
 }
 .img-box ul{
 	position: absolute;
@@ -215,6 +222,7 @@ p{
 	height: 0px;
 	margin:0px;
 	opacity: 0;
+
 }
 .profile .img-box:after, .img-box ul, .img-box ul li{
 	-webkit-transition: all 0.5s ease-in-out 0s;

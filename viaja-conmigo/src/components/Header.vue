@@ -1,6 +1,6 @@
 <template>
 
-<nav class="navbar navbar-light  static-top row">
+<nav class="navbar navbar-light static-top row">
 
   <div class="container-fluid">
       <a href="/" class="title navbar-brand"><img src="src/assets/logo1.png" class="img-fluid" alt="Responsive image" height="50px" width="50px"></a>
@@ -16,6 +16,7 @@
 		<div class=" mt-1 ml-4 ">
 			<ul class="nav ml-4">
         <router-link :to="{name :'postLink'}" tag="li" class="nav-item mr-3"><a class="btn btn-1" href="">+ Publicar viaje</a></router-link>
+        <router-link :to="{name :'viewLink'}" tag="li" class="nav-item mr-3"><a class="btn btn-1" href="">Ver viajes </a></router-link>
 				<!--<router-link :to="{name :'loginLink'}" tag="li" class="nav-item  mr-3"><a class="btn btn-1" href="#">Inicia sesión </a></router-link>
 				<router-link :to="{name :'registerLink'}" tag="li" class="nav-item mr-3"><a class="btn btn-1" href="#"> Registrate </a></router-link>-->
 				<router-link :to="{name :'panelLink'}" tag="li" class="nav-item mr-3"><a class="btn  btn-1 " href="#"> Perfil </a> </a></router-link>
@@ -54,20 +55,20 @@ export default{
 }
 
 .first-title{
-		font-family: 'Shadows Into Light', cursive;
-    font-size: 28px;
-    position: relative;
-    left: -135px;
-    top: 3px;
-    color: black;
+	font-family: 'Shadows Into Light', cursive;
+  font-size: 28px;
+  position: relative;
+  left:-102px;
+  top: 3px;
+  color: black;
 
 
 }
 
 .user-tools{
-	    position: relative;
-    top: 7px;
-    left: -25px;
+	position: relative;
+  top: 7px;
+  left: -25px;
 }
 .header-top{
 	

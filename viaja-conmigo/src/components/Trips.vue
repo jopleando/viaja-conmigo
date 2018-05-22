@@ -100,7 +100,7 @@ data(){
   .panel-table .panel-body{
   padding:0;
 }
-.table-responsive {height:200px;}
+
 
 .panel-table .panel-body .table-bordered{
   border-style: none;

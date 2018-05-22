@@ -62,23 +62,6 @@
 <p class="mr-3 ml-3 mt-2"> - </p>
 <input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newPartner.year2">
 		 	
-       <!--<select class="col-sm-1 form-control  border rounded" v-model="newPartner.month1">
-
-          <option class="options" value="">Mes</option>
-          <option v-for="(month_obj, month) in months" :value="month" >{{month}}</option>
-       </select>
-       <select class="col-sm-1 form-control  border rounded" v-model="newPartner.year1">
-          <option class="options" value=""> Año</option>
-          <option v-for="(year_obj, year) in years" :value="year" >{{year}}</option>
-       </select>
-       
-       <select class="col-sm-1 form-control  border rounded" v-model="newPartner.month2">
-          <option class="options" value="">Mes</option>
-          <option v-for="(month_obj, month) in months" :value="month" >{{month}}</option>
-        </select>
-        <select class="col-sm-1 form-control  border rounded" v-model="newPartner.year2">
-          <option class="options" value="">Año </option>
-          <option v-for="(year_obj, year) in years" :value="year" >{{year}}</option>
         </select>-->
 		<button :disabled="sending" class="col-1 btn btn-2 ml-5 " type="button" v-on:click.prevent="addFilters">Buscar </button>
 		</div>
@@ -120,6 +103,7 @@ export default{
 	},
 	data(){
 		return{
+			
 			moment:moment,
 			sending:false,
 			newPartner:{
@@ -132,9 +116,7 @@ export default{
 				'transports':"",
 				'dayMoney':"",
 				'hostDay':"",
-				//'month1':"",
 				'year1':"",
-				//'month2':"",
 				'year2':""
 
 			},
@@ -148,11 +130,11 @@ export default{
 
         money:{
         	'Indiferente':{},
-        	'0 - 10 $':{},
-        	'10 - 30 $':{},
-        	'30 - 50 $':{},
-        	'50 - 100 $':{},
-        	'+ 100 $': {}
+        	'0 - 10 ':{},
+        	'10 - 30 ':{},
+        	'30 - 50 ':{},
+        	'50 - 100 ':{},
+        	'+ 100 ': {}
 
         },
 
@@ -435,29 +417,23 @@ export default{
 		websitesRef.push(this.newPartner).then(() =>{
 			this.sending = false
 
-			this.newPartner = {
-			countryOrigin: this.countryOrigin,
-			countryDestination: this.countryDestination,
-			travelDate: this.travelDate,
-			travelDate1:this.travelDate1,
-			sexSelected: this.sexSelected,
-			description: this.description,
-			cityOrigin: this.cityOrigin,
-			cityDestination: this.cityDestination,
-			cityOriginPartner:this.cityOriginPartner,
-			language:this.language,
-			transports:this.transports,
-			dayMoney: this.dayMoney,
-			hostDay:this.hostDay,
-			month1:this.month1,
-			month2:this.month2,
-			year1:this.year1,
-			year2:this.year2
+		 this.newPartner.sexSelected='';
+			this.newPartner.description='';
+			this.newPartner.cityOrigin='';
+			this.newPartner.cityDestination='';
+			this.newPartner.cityOriginPartner='';
+			this.newPartner.language='';
+			this.newPartner.dayMoney='';
+			this.newPartner.hostDay='';
+			this.newPartner.year1='';
+			this.newPartner.year2='';
 			
 
 
-			}
-		})   
+			
+		}) 
+
+			  
 		
 		this.$router.push({name: 'shareLink', params:{ newPartner: this.newPartner}}) 
 	},
@@ -587,8 +563,8 @@ h5{
 }
 
 .content-2{
-	    position: relative;
-    top: 115px;
+	position: relative;
+  top: 115px;
 }
 	
 </style>

@@ -1,11 +1,14 @@
 <template>
     
     <div class="row text-center" id="login">
+        
         <div class="col-sm-6 col-md-4 col-md-offset-4">
+          
             <div class="account-wall">
-                <form class="form-signin" @submit="createUser">
+                  <a href="/" class="title navbar-brand"><img src="src/assets/logo1.png" class="img-fluid" alt="Responsive image" height="50px" width="50px"></a>
+                <form class="form-signin" @submit="register">
                     <span id="reauth-email" class="reauth-email"></span>
-                    <h2>Create una cuenta </h2>
+                    <h2 class="mb-3">Create una cuenta </h2>
                    <!-- <input type="name"  class="form-control" placeholder="Nombre" required autofocus v-model="name">
                     <input type="lastName"  class="form-control" placeholder="Apellidos" required autofocus v-model="lastName">
                     <input type="gender"  class="form-control" placeholder="Genero" required autofocus v-model="gender">
@@ -14,10 +17,11 @@
                     <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus v-model="email">
                     <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required v-model="password">
                     
-                    <button class="btn btn-lg btn-1 btn-block" type="submit">Registrate</button>
-                     <router-link :to="{'name':'loginLink'}"><a class="nav-link"> Vuelve atrás </a></router-link>
+                    <button class="btn btn-lg btn-1 btn-block" @click="register" type="button">Registrate</button>
+                    <a class="nav-link my-3"><router-link :to="{name:'loginLink'}">Conectate</router-link></a>
+                     <!-- <router-link :to="{'name':'loginLink'}"><a class="nav-link"> Vuelve atrás </a></router-link>
                     <span v-if="errorMsg !== ''" class="login-error-msg">{{ errorMsg }}</span>
-                    <span v-if="successMsg !== ''" class="login-success-msg">{{ successMsg }}</span>
+                    <span v-if="successMsg !== ''" class="login-success-msg">{{ successMsg }}</span> -->
                 </form><!-- /form -->
             </div><!-- /card-container -->
         </div>
@@ -27,57 +31,32 @@
 <script>
 import {auth} from '../firebase'
 import {db} from '../firebase'
-let registerRef= db.ref('register')
-
 export default {
-
-    firebase:{
-        register:registerRef,
-    },
     data(){
         return{
-            
-           /* name:"",
-            lastName:"",
-            gender:"",
-            date:"",
-            description:"",*/
             email: "",
-            password: "",
-            successMsg: "",
-            errorMsg: "",
+            password:""
         }
     },
     methods:{
-        createUser(){
-            auth.createUserWithEmailAndPassword(this.email,this.password).then((user)=>{
-
-                this.successMsg = "New user created successfully!";
-                this.errorMsg = "";
-
-                setTimeout(function(){this.$router.replace({name:'panelLink'})}.bind(this),5000);
-
-
-            })
-            .catch((err)=>{
-                this.errorMsg = err.message;
-            })
-        
-
-    }
-    /*addUser(){
-        this.sending=true
-            registerRef.push(this.name, this.lastname,this.gender,this.date, this.description).then(()=>{
-                this.sending=false
-         
-
-            })
-            this.$router.push({name: 'panelLink', params:{ newPartner: this.newPartner}})
-            }*/
+        register(){
+            auth.createUserWithEmailAndPassword(this.email, this.password)
+              .then((user) => {
+                var userId = auth.currentUser.uid;
+                this.$router.replace( '/loginLink');
+                db.ref('users/' + userId).set({
+                                email: this.email
+                              });
+                
+              })
+            .catch(function(error) {
+            // Handle Errors here.
+            let errorCode = error.code;
+            let errorMessage = error.message;
+                    });
         }
-    }
-
-
+        }
+}
 </script>
 
 

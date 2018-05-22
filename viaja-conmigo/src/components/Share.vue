@@ -16,11 +16,11 @@
                   </div>-->
                 </div>
               </div>
-              <div class="panel-body table-responsive">
+              <div class="panel-body table-responsive mt-3">
                 <table class="table table-striped table-bordered table-list">
-                  <thead>
+                 <thead>
                     <tr>
-                        <th><em class="fa fa-cog"></em></th>
+                        
                         <th>Tu pais</th>
                         <th>Su pais</th>
                         <th>Destino</th>
@@ -31,32 +31,104 @@
                         <th>Fecha</th>
                     </tr> 
                   </thead>
-                  <tbody id="myTable">
-                
-                          <tr v-for="website in websites":key="website['.key']">
-                            <td align="center">
-                              <button class="btn btn-sm btn-outline-success"
-                        type="button"
-                        v-on:click.prevent="deleteFilter(website)"
-                        >-</button>
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                                <td>{{website.cityOrigin}}</td>
-                                <td>{{website.cityOriginPartner}}</td>
-                                <td>{{website.cityDestination}}</td>
-                                <td>{{website.sexSelected}}</td>
-                                <td>{{website.language}}</td>
-                                <td>{{website.dayMoney}}</td>
-                                <td>{{website.hostDay}}</td>
-                                <td>{{website.year1}}</br>{{website.year2}}</td>
-                            
-                          </tr>
-                        </tbody>
-                </table>
-            
+                  <tbody>
+                  
+                      <tr v-for="website in websites"v-bind:key="website['.key']">
+                    
+                        <td>{{website.cityOrigin}}</td>
+                        <td>{{website.cityOriginPartner}}</td>
+                        <td>{{website.cityDestination}}</td>
+                        <td>{{website.sexSelected}}</td>
+                        <td>{{website.language}}</td>
+                        <td>{{website.dayMoney}}</td>
+                        <td>{{website.hostDay}}</td>
+                        <td>{{website.year1}}</br>{{website.year2}}</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+  
+  <div class="col-md-12 mb-5 mt-5">
+    <button class="btn btn-1 btn-primary" @click="filterData">Muestra los usuarios </button>
+  </div>
+
+      <div class="container p-3" v-for="result in results ">
+      
+        <div class="row">
+          <div class="user-1 col-md-4">
+            <div class="user-profile col-md-10 ">
+              <img class="image-1 img-fluid  img-rounded" src="http://nabeel.co.in/files/bootsnipp/team/1.jpg"/>
+               <h2 class="name-1 text-center mb-3"> Pepa Flores</h2>
+                <p> De: {{result.cityOriginPartner}}</p>
+                <p> A : {{result.cityDestination}}</p>
+                <p> Idioma : {{result.language}}</p>
+                <p>Presupuesto :{{result.dayMoney}}</p>
+                <p>Hospedaje: {{result.hostDay}}</p>
+                <p> Fecha: {{result.year1}}</p>{{website.year2}}</p>
+                <router-link :to="{name :'user1Link'}" class="nav-item d-flex align-content-center"><a class="btn  btn-1 " href="#"> Mira su perfil</a></router-link>
               </div>
             </div>
+            <div class="user-1 col-md-4">
+              <div class="user-profile col-md-10">
+              <img class="image-1 img-fluid  img-rounded" src="http://nabeel.co.in/files/bootsnipp/team/4.jpg"/>
+               <h2 class="name-1"> Ramon Jimenez</h2>
+                <p> De: {{result.cityOriginPartner}}</p>
+                <p> A : {{result.cityDestination}}</p>
+                <p> Idioma : {{result.language}}</p>
+                <p>Presupuesto :{{result.dayMoney}}</p>
+                <p>Hospedaje: {{result.hostDay}}</p>
+                <p> Fecha: {{result.year1}}</p>{{website.year2}}</p>
+                <router-link :to="{name :'user2Link'}" class="nav-item d-flex align-content-center "><a class="btn  btn-1 " href="#"> Mira su perfil</a></router-link>
+              </div>
+            </div>
+            <div class="user-1 col-md-4">
+              <div class="user-profile col-md-10">
+              <img class="image-1 img-fluid  img-rounded" src="http://nabeel.co.in/files/bootsnipp/team/3.jpg"/>
+               <h2 class="name-1"> Rocio Zafra </h2>
+                <p> De: {{result.cityOriginPartner}}</p>
+                <p> A : {{result.cityDestination}}</p>
+                <p> Idioma : {{result.language}}</p>
+                <p>Presupuesto :{{result.dayMoney}}</p>
+                <p>Hospedaje: {{result.hostDay}}</p>
+                <p> Fecha: {{result.year1}}</p>{{website.year2}}</p>
+               <router-link :to="{name :'user2Link'}" class="nav-item d-flex align-content-center "><a class="btn  btn-1 " href="#"> Mira su perfil</a></router-link>
+              </div>
+            </div>
+            <div class="user-1 col-md-4">
+              <div class="user-profile col-md-10">
+              <img class="image-1 img-fluid  img-rounded" src="http://nabeel.co.in/files/bootsnipp/team/2.jpg"/>
+               <h2 class="name-1"> Tania Marin</h2>
+                <p> De: {{result.cityOriginPartner}}</p>
+                <p> A : {{result.cityDestination}}</p>
+                <p> Idioma : {{result.language}}</p>
+                <p>Presupuesto :{{result.dayMoney}}</p>
+                <p>Hospedaje: {{result.hostDay}}</p>
+                <p> Fecha: {{result.year1}}</p>{{website.year2}}</p>
+                <router-link :to="{name :'user1Link'}" class="nav-item d-flex align-content-center "><a class="btn  btn-1 " href="#"> Mira su perfil</a></router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+  
+           <!-- <table>
+              <thead>
+                <tr>
+                  <td> Ciudad de destino</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="result in results">
+                  <td>{{result.cityDestination}}</td>
+                </tr>
+              
+            </tbody>
+            </table>-->
+  
+           
     </div>
   </div>
 </div>
@@ -69,7 +141,7 @@ import {db} from '../firebase'
 import {auth} from './../firebase'
 import {storage} from '../firebase'
 let websitesRef=db.ref('websites')
-let listRef= db.ref('listCity')
+
 
 
 export default{
@@ -78,31 +150,55 @@ export default{
 data(){
     return{
         sending:false,
+        results:[],
         websites:[],
+        website:{
+          "cityDestination" : "Anguilla",
+          "cityOriginPartner":'',
+
+        }
         
      }
+ 
  },
   
  firebase:{
   websites:{
-    source:db.ref("websites")
+    source:db.ref("websites"),
+    asObject:true,
   }
   
 
  }, 
  methods:{
+  filterData:function() {
+   
+    
+    //var long = this.websites
+    //console.log(long)
+    for(var item in this.websites){
+      console.log(item)
+      if (this.website.cityDestination = this.websites[item].cityDestination)
+      {
+        this.results.push(this.websites[item])
+      }else{
+        console.log('error')
+      }
+
+    }
+  },
   deleteFilter(website){
-    websitesRef.child(website.id).remove()
+    websitesRef.child(website['.key']).remove();
   }
   
- },
- created(){
+ }
+ /*created(){
       websitesRef.on('child_removed',snapshot=>{
         const deleteFilter = this.websites.find(website=> website.id===snapshot.key)
         const index= this.websites.indexOf(deleteFilter)
         this.websites.splice(0, 3)
       })
-    }
+    }*/
   
    
   }
@@ -117,24 +213,34 @@ data(){
 <style>
   @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 
+.name-1{
+  font-family: 'Shadows Into Light', cursive;
+  color:black;
+  border-bottom: 1px solid #000000;
+}
+p{
+  color:black;
+}
+
 .panel-title{
   font-family: 'Shadows Into Light', cursive;
   color:black;
 }
   .panel-table .panel-body{
   padding:0;
+  background-color: #ffffff8f;
 }
-.table-responsive {height:200px;}
+
 
 .panel-table .panel-body .table-bordered{
   border-style: none;
   margin:0;
-      color: black;
+  color: black;
 }
 
 .panel-table .panel-body .table-bordered > thead > tr > th:first-of-type {
-    text-align:center;
-    width: 100px;
+  text-align:center;
+  width: 100px;
 }
 
 .panel-table .panel-body .table-bordered > thead > tr > th:last-of-type,
@@ -162,17 +268,18 @@ data(){
 /*
 used to vertically center elements, may need modification if you're not using default sizes.
 */
-.panel-table .panel-footer .col{
- line-height: 34px;
- height: 34px;
-}
-
-.panel-table .panel-heading .col h3{
- line-height: 30px;
- height: 30px;
-}
-
-.panel-table .panel-body .table-bordered > tbody > tr > td{
-  line-height: 34px;
-}
+.image-1{
+background-color:rgba(255, 255, 255, 0.075);  
+  border-radius: 50%; margin: 20px auto; padding:10px; border: 1px solid #C7C7D0;
+  margin-top:50px;
+  }
+ 
+ .user-profile{
+    background-color: #ffffff8a;
+    /* padding: 4px; */
+    margin: 10px;
+    padding-right: 29px;
+    padding-left: 29px;
+    padding-bottom: 8px;
+ }
 </style>

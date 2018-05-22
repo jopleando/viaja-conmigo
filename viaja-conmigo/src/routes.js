@@ -13,6 +13,9 @@ import Settings from './components/Settings.vue'
 import Trips from './components/Trips.vue'
 import UserPanel from './components/UserPanel.vue'
 import Share from './components/Share.vue'
+import User1 from './components/User1.vue'
+import User2 from './components/User2.vue'
+
 
 
 export const routes = [
@@ -26,6 +29,8 @@ name:'homeLink'},
 {path: '/about', component: About, name: 'aboutLink',},
 {path: '/dates', component: Dates, name: 'datesLink'},
 {path: '/login', component: Login, name: 'loginLink'},
+{path: '/user1', component: User1, name: 'user1Link'},
+{path: '/user2', component: User2, name: 'user2Link'},
 {path: '/menu', component: Menu, name: 'menuLink', meta: { requiresAuth: true }},
 {path:'/share', component: Share, name: 'shareLink', meta: { requiresAuth: true }},
 {path: '/profile', component: Profile, meta: { requiresAuth: true }, name: 'profileLink',

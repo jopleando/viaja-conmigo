@@ -3,6 +3,7 @@
     <div class="row text-center" id="login">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
             <div class="account-wall">
+                <a href="/" class="title navbar-brand"><img src="src/assets/logo1.png" class="img-fluid" alt="Responsive image" height="50px" width="50px"></a>
                 <form class="form-signin" @submit="login">
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus v-model="email">
@@ -23,13 +24,17 @@
 
 <script>
 import {auth} from '../firebase'
+import {db} from '../firebase'
+let userRef=db.ref('user')
 
 export default {
+
     data(){
         return{
             email: "",
             password:"",
             errorMsg: "",
+           
         }
     },
     methods:{
@@ -42,7 +47,23 @@ export default {
                 this.errorMsg = err.message;
             })
         }
-    }
+    }/*,
+    ready: function () {
+
+        // Auth
+        auth.onAuthStateChanged(function (user) {
+            if (user) {
+                console.info('Conectado: ', user);
+                vm.autentificado = true;
+                vm.usuarioActivo = user;
+            } else {
+                console.warn('No conectado');
+                vm.autentificado = false;
+                vm.usuarioActivo = null;
+            }
+        });
+    },*/
+
 }
 </script>	
 
