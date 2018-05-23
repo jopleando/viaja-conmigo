@@ -1,6 +1,6 @@
 <template>
 
-	<div class="mb-1" id="home">
+	<div class="" id="home">
 		<div class="row">
 			<div class="col-xl-9 mx-auto text-center mb-2 mr-4">
 			<h4 class=" principal-title mb-2 ml-3 mt-0"> Compartir viajes, para vivir experiencias únicas</h4>
@@ -13,7 +13,7 @@
 	
      <div class=" form-group row">
      	<!--<input type="range" name="points" min="0" max="50">-->
-      	<select class="col-sm-6 form-control  border rounded" v-model="newPartner.cityOrigin">
+      	<select class="col-sm-6 col-12 col-md-6 form-control  border rounded" v-model="newPartner.cityOrigin">
           <option value="">¿De que pais eres?</option>
           <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
        </select>
@@ -67,6 +67,7 @@
 		</div>
 		
 	</form>	
+	<!--
 	<section class="content-2 row mt-5">
 			<div class=" title-2 col-md-12 mb-5">
 				<h1 class="text-center text-end">Experiencias de otros viajeros </h1>
@@ -84,7 +85,7 @@
 					<img src="src/assets/image-4.jpeg" alt="" class="img-fluid rounded" >
 				</div>
 			</div>
-	</section> 
+	</section>-->
 </div>
 
 </template>

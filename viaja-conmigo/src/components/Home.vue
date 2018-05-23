@@ -1,12 +1,17 @@
 <template>
 	<div>
-<pp-New></pp-New>
+<pp-New></pp-New>	
+<pp-Carousel></pp-Carousel>
 	</div>
+
+
+	
 
 
 </template>
 
 <script>
+import Carousel from '../components/Carousel.vue'
 import NewPartner from '../components/NewPartner.vue'
 import {db} from '../firebase'
 import {storage} from '../firebase'
@@ -30,6 +35,7 @@ export default{
 		},
 		components:{
 			ppNew:NewPartner,
+			ppCarousel:Carousel
 	
 	}
 }

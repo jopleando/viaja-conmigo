@@ -25,7 +25,12 @@
                         style="padding:10px; background-color: #5cb85c; color: #FFF; font-weight: bold; margin: 10px;">
                     Enviar
                 </button>
+
             </div>
+
+        </div>
+        <div class="col-md-12">
+        <router-link :to="{name :'user1Link'}"class=""><a class="nav-link" href="">Vuelve atrás</a></router-link>
         </div>
     </div>
 </template>

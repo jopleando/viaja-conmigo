@@ -34,7 +34,7 @@
                     
                   </tr>
               </table>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, libero! Omnis accusantium eum, possimus corrupti cumque itaque ratione tempora eius mollitia porro minus illo eligendi molestias deserunt earum, nesciunt autem?</p>
+              <p class="p-user"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, libero! Omnis accusantium eum, possimus corrupti cumque itaque ratione tempora eius mollitia porro minus illo eligendi molestias deserunt earum, nesciunt autem?</p>
               <button class="btn btn-1 button-exit" @click="logout">Cerrar sesión </button>
 
             </div>
@@ -126,6 +126,7 @@
     top: -37px;
     left: 16px;
     font-size: 51px;
+    border-bottom:1px solid #0000006b;
 }
 .panel-title-2{
 		font-family: 'Shadows Into Light', cursive;
@@ -218,7 +219,7 @@ position: relative;
 right: 53px;
 
 }
-p{
+.p-user{
   color:black;
   font-style: oblique;
 }

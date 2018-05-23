@@ -30,6 +30,7 @@
             	</table>
             	<p> "Soy muy sociable, me encanta viajar siempre que puedo y no me importa con quien ni el destino"</p>
               <router-link :to="{name :'messagesLink'}"class="btn btn-1 button-exit"><a class="nav-link" href="">Habla con ella</a></router-link>
+              <router-link :to="{name :'ownTripsLink'}"class="btn btn-1 button-exit"><a class="nav-link" href="">Ve sus viajes</a></router-link>
               
             </div>
           
@@ -128,6 +129,7 @@ background-color:rgba(255, 255, 255, 0.075);
     top: -13px;
     left: 16px;
     font-size: 47px;
+    border-bottom: 1px solid #0000006b;
 }
 .panel-title-2{
 		font-family: 'Shadows Into Light', cursive;
