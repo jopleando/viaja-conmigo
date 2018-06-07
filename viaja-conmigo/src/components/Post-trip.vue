@@ -8,9 +8,6 @@
 
 <script>
 
-
-
-
 import NewTrip from '../components/NewTrip.vue'
 import {db} from '../firebase'
 import {storage} from '../firebase'

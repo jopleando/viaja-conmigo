@@ -12,7 +12,6 @@
 	              <h1>Maria Garcia</h1>
 	              <h2>Aventurera/ Extrovertida</h2>
 	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	              
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -24,7 +23,6 @@
 	              <h1>Christopher Di</h1>
 	              <h2> Soñador/ Risueño</h2>
 	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	             
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -36,7 +34,6 @@
 	              <h1>Heather H</h1>
 	              <h2>Aventurer@/ Extrovertid@</h2>
 	               <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	              
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -47,8 +44,8 @@
 	              </div>
 	              <h1>John Doe</h1>
 	              <h2>Aventurer@/ Extrovertid@</h2>
-	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	             
+	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a>
+	              </router-link>    
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -59,8 +56,8 @@
 	              </div>
 	              <h1>Peter John</h1>
 	              <h2>Web Developer</h2>
-	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	             
+	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a>
+	              </router-link>
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -72,7 +69,6 @@
 	              <h1>Cherry John</h1>
 	              <h2>Fullstack Developer</h2>
 	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	             
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -84,7 +80,6 @@
 	              <h1>Frank Martin</h1>
 	              <h2>Co-founder/ Operations</h2>
 	             	<router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	             
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -96,7 +91,6 @@
 	              <h1>Christopher Di</h1>
 	              <h2>Co-founder/ Projects</h2>
 	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	              
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -108,7 +102,6 @@
 	              <h1>Heather H</h1>
 	              <h2>Co-founder/ Marketing</h2>
 	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	              
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -120,7 +113,6 @@
 	              <h1>Nancy Doe</h1>
 	              <h2>Designer</h2>
 	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	             
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -132,7 +124,6 @@
 	              <h1>Stella John</h1>
 	              <h2>Web Developer</h2>
 	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	              
 	            </div>
 	            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
 	              <div class="img-box">
@@ -144,7 +135,6 @@
 	              <h1>Cherry John</h1>
 	              <h2>Fullstack Developer</h2>
 	              <router-link :to="{name :'user1Link'}" tag="li" class="nav-item mr-5"><a class="btn btn-1" href="">Mira su perfil</a></router-link>
-	              
 	            </div>
 	          </div>
 	        </div>

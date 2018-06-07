@@ -1,6 +1,5 @@
 <template>
 
-  
     <div class="row" id="menu">
       <div class="">
         <nav class="navbar-3 col-12">
@@ -15,18 +14,9 @@
         </div>
     <div class="col-12">
        <router-view></router-view>
-
     </div>
-     
-    </div>
+  </div>
     
-
-
-
-    
-
-
-  
 </template>
 
 <style>

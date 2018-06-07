@@ -18,8 +18,6 @@
         </div>
     </div>
   
-
-
 </template>
 
 <script>
@@ -47,22 +45,7 @@ export default {
                 this.errorMsg = err.message;
             })
         }
-    }/*,
-    ready: function () {
-
-        // Auth
-        auth.onAuthStateChanged(function (user) {
-            if (user) {
-                console.info('Conectado: ', user);
-                vm.autentificado = true;
-                vm.usuarioActivo = user;
-            } else {
-                console.warn('No conectado');
-                vm.autentificado = false;
-                vm.usuarioActivo = null;
-            }
-        });
-    },*/
+    }
 
 }
 </script>	

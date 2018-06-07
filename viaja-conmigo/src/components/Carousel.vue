@@ -3,8 +3,7 @@
     <div class=" title-2 col-md-12 text-center">
         <h1 class="text-center ">Experiencias de otros viajeros </h1>
         <h2 class="text-center mb-5 ">Inspirate </h2>
-        
-      </div>
+     </div>
       <div class="no-mode-translate-demo-wrapper">
         <transition name="no-mode-translate-fade">
             <div v-for="(item, i) in source" @click="play" v-if="current == i" v-bind:key="i"  :class="to">
@@ -14,7 +13,7 @@
         <button type="button" class="next btn btn-1 mt-4" @click="next">
           >>>
         </button>
-      </div>
+     </div>
   </div>
 </template>
 

@@ -1,26 +1,20 @@
 <template>
   
     <div class="container mt-4">
-    <div class="row">
-    
+      <div class="row">
         <div class="col-md-12 col-md-offset-1">
-
             <div class="panel panel-default panel-table">
               <div class="panel-heading">
                 <div class="row">
                   <div class="col col-xs-6 mb-2">
                     <h3 class="panel-title "> En busca del Compañero de Viaje Perfecto </h3>
                   </div>
-                  <!--<div class="col col-xs-6 text-right">
-                    <button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>
-                  </div>-->
                 </div>
               </div>
               <div class="panel-body table-responsive mt-3">
                 <table class="table table-striped table-bordered table-list">
                  <thead>
                     <tr>
-                        
                         <th>Tu pais</th>
                         <th>Su pais</th>
                         <th>Destino</th>
@@ -32,9 +26,7 @@
                     </tr> 
                   </thead>
                   <tbody>
-                  
                       <tr v-for="website in websites"v-bind:key="website['.key']">
-                    
                         <td>{{website.cityOrigin}}</td>
                         <td>{{website.cityOriginPartner}}</td>
                         <td>{{website.cityDestination}}</td>
@@ -48,7 +40,6 @@
               </table>
             </div>
           </div>
-
         </div>
   
   <div class="col-md-12 mb-5 mt-5">
@@ -112,23 +103,6 @@
           </div>
         </div>
       </div>
-        
-  
-           <!-- <table>
-              <thead>
-                <tr>
-                  <td> Ciudad de destino</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="result in results">
-                  <td>{{result.cityDestination}}</td>
-                </tr>
-              
-            </tbody>
-            </table>-->
-  
-           
     </div>
   </div>
 </div>
@@ -192,77 +166,64 @@ data(){
   }
   
  }
- /*created(){
-      websitesRef.on('child_removed',snapshot=>{
-        const deleteFilter = this.websites.find(website=> website.id===snapshot.key)
-        const index= this.websites.indexOf(deleteFilter)
-        this.websites.splice(0, 3)
-      })
-    }*/
-  
    
   }
-
-
- 
-
-
 
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 
 .name-1{
-  font-family: 'Shadows Into Light', cursive;
-  color:black;
-  border-bottom: 1px solid #000000;
+font-family: 'Shadows Into Light', cursive;
+color:black;
+border-bottom: 1px solid #000000;
 }
 p{
-  color:black;
+color:black;
 }
 
 .panel-title{
-  font-family: 'Shadows Into Light', cursive;
-  color:black;
+font-family: 'Shadows Into Light', cursive;
+color:black;
 }
-  .panel-table .panel-body{
-  padding:0;
-  background-color: #ffffff8f;
+.panel-table .panel-body{
+padding:0;
+background-color: #ffffff8f;
 }
 
 
 .panel-table .panel-body .table-bordered{
-  border-style: none;
-  margin:0;
-  color: black;
+border-style: none;
+margin:0;
+color: black;
 }
 
 .panel-table .panel-body .table-bordered > thead > tr > th:first-of-type {
-  text-align:center;
-  width: 100px;
+text-align:center;
+width: 100px;
 }
 
 .panel-table .panel-body .table-bordered > thead > tr > th:last-of-type,
 .panel-table .panel-body .table-bordered > tbody > tr > td:last-of-type {
-  border-right: 0px;
+border-right: 0px;
 }
 
 .panel-table .panel-body .table-bordered > thead > tr > th:first-of-type,
 .panel-table .panel-body .table-bordered > tbody > tr > td:first-of-type {
-  border-left: 0px;
+border-left: 0px;
 }
 
 .panel-table .panel-body .table-bordered > tbody > tr:first-of-type > td{
-  border-bottom: 0px;
+border-bottom: 0px;
 }
 
 .panel-table .panel-body .table-bordered > thead > tr:first-of-type > th{
-  border-top: 0px;
+border-top: 0px;
 }
 
 .panel-table .panel-footer .pagination{
-  margin:0; 
+margin:0; 
 }
 
 /*
@@ -270,16 +231,16 @@ used to vertically center elements, may need modification if you're not using de
 */
 .image-1{
 background-color:rgba(255, 255, 255, 0.075);  
-  border-radius: 50%; margin: 20px auto; padding:10px; border: 1px solid #C7C7D0;
-  margin-top:50px;
-  }
- 
- .user-profile{
-    background-color: #ffffff8a;
-    /* padding: 4px; */
-    margin: 10px;
-    padding-right: 29px;
-    padding-left: 29px;
-    padding-bottom: 8px;
- }
+border-radius: 50%; margin: 20px auto; padding:10px; border: 1px solid #C7C7D0;
+margin-top:50px;
+}
+
+.user-profile{
+background-color: #ffffff8a;
+/* padding: 4px; */
+margin: 10px;
+padding-right: 29px;
+padding-left: 29px;
+padding-bottom: 8px;
+}
 </style>

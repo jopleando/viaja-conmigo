@@ -1,36 +1,32 @@
 <template>
 
 	<div class="mb-5" id="post">
-		
 		<form class="searching-1 mb-5">
 			<h5 class="title-5">Publica tu viaje</h5>
-	
-	
      <div class=" form-group row">
       	<select class="col-sm-6 form-control  border rounded" v-model="newTrip.cityOrigin">
           <option value="">Indica de que pais eres</option>
           <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
        </select>
-     </div>
-     <div class=" form-group row">
-        <select class="col-sm-6 form-control  border rounded" v-model="newTrip.cityDestination">
-          <option class="options" value="">Indica a que pais te gustaría viajar</option>
-          <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
-         </select>
-     </div>
-     <div class="form-group row">
-		      <select class="col-sm-6 form-control  border rounded" v-model="newTrip.sexSelected">
-            <option value="">Indica tu genero</option>
-            <option v-for="(user_obj, user) in userSex" :value="user" >{{user}}</option>
-		       </select>
-     </div>
-
-      <div class=" form-group row">
-        <select class="col-sm-6 form-control  border rounded" v-model="newTrip.language">
-          <option class="options" value=""> Indica tu idioma </option>
-          <option v-for="(language_obj, language) in languages" :value="language" >{{language}}</option>
-         </select>
-     </div>
+	     </div>
+	     <div class=" form-group row">
+	        <select class="col-sm-6 form-control  border rounded" v-model="newTrip.cityDestination">
+	          <option class="options" value="">Indica a que pais te gustaría viajar</option>
+	          <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
+	         </select>
+	     </div>
+	     <div class="form-group row">
+			      <select class="col-sm-6 form-control  border rounded" v-model="newTrip.sexSelected">
+	            <option value="">Indica tu genero</option>
+	            <option v-for="(user_obj, user) in userSex" :value="user" >{{user}}</option>
+			       </select>
+	     	</div>
+	      <div class=" form-group row">
+	        <select class="col-sm-6 form-control  border rounded" v-model="newTrip.language">
+	          <option class="options" value=""> Indica tu idioma </option>
+	          <option v-for="(language_obj, language) in languages" :value="language" >{{language}}</option>
+	         </select>
+	     </div>
       <div class=" form-group row">
         <select class="col-sm-6 form-control  border rounded" v-model="newTrip.dayMoney">
           <option class="options" value="">Indica cual seria tu presupuesto medio por dia</option>
@@ -42,19 +38,18 @@
           <option class="options" value="">Indica donde te gustaría hospedarte</option>
           <option v-for="(ho_obj, ho) in host" :value="ho" >{{ho}}</option>
          </select>
-     </div>
-		
-		 <div class="form-group row mb-5" >
-		 	
-       <input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newTrip.year1">
-<p class="mr-3 ml-3 mt-2"> - </p>
-<input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newTrip.year2">
-		<button :disabled="sending" class="col-1 btn btn-1 ml-5 " type="button" v-on:click.prevent="addOptions">Publicalo </button>
-		</div>
-		
-	</form>
-</div>
+     </div>	
+		 <div class="form-group row mb-5" >		 	
+				 <input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newTrip.year1">
+				<p class="mr-3 ml-3 mt-2"> - </p>
+				<input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newTrip.year2">
+				<button :disabled="sending" class="col-1 btn btn-1 ml-5 " type="button" v-on:click.prevent="addOptions">Publicalo </button>
+				</div>			
+		</form>
+	</div>
+
 </template>
+
 <script>
 var moment = require ('moment')
 import {db} from '../firebase'
@@ -472,12 +467,8 @@ export default{
 		this.$router.push({name: 'tripsLink', params:{ newTrip: this.newTrip}}) 
 	},
 	
-	 
-   
-// 	   
-// }
 	created () {
-	      // value = snapshot.val() | key = snapshot.key
+	      
 	      tripsRef.on('value', function(snapshot){
 	        console.log(snapshot.val());
 	       
@@ -488,28 +479,26 @@ export default{
 	}
 }
 	
-
-
-
 	
 </script>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 
 @import url('https://fonts.googleapis.com/css?family=Alef');
-	.searching-1{
-		position: relative;
-    top: 48px;
-    left: 343px;
-	}
+.searching-1{
+position: relative;
+top: 48px;
+left: 343px;
+}
 
-	.title-5{
-		font-family: 'Shadows Into Light', cursive;
-		position: relative;
-    /* left: -33px; */
-    right: 617px;
-    color:black;
+.title-5{
+font-family: 'Shadows Into Light', cursive;
+position: relative;
+/* left: -33px; */
+right: 617px;
+color:black;
 
-	}
+}
 </style>

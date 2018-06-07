@@ -1,6 +1,4 @@
 <template>
-
-
       <div class="container ">
         <div class="row user-profile-2 mb-5 m">
           
@@ -32,53 +30,43 @@
           
 </div>
 <h5 class="photo-1 mt-5"> Fotos de sus viajes </h5>
-	<div class="tripple">
-	<div class="boximg">
-	<img src="http://25.media.tumblr.com/tumblr_m411ji0JVd1qib5bvo1_500.jpg" />
-	<p>Lorem ipsum dolor sit amet</p>
-	</div>
-
-	<div class="boximg">
-	<img src="https://templated.co/items/demos/visualize/images/thumbs/05.jpg" />
-	<p>Lorem ipsum dolor sit amet</p>
-	</div>
-
-	</div>
-
-
-	<div class="tripple">
-	<div class="boximg">	
-	<img src="https://templated.co/items/demos/visualize/images/thumbs/06.jpg" />
-	<p>Lorem ipsum dolor sit amet</p>
-	</div>
-
-	<div class="boximg">					
-	<img src="https://templated.co/items/demos/visualize/images/thumbs/07.jpg"/>
-	<p>Lorem ipsum dolor sit amet</p>
-	</div>
-	</div>
-
-	<div class="tripple">
-	<div class="boximg">
-	<img src="https://templated.co/items/demos/visualize/images/thumbs/03.jpg" />
-	<p>Lorem ipsum dolor sit amet</p>
-	</div>
-
-	<div class="boximg">
-	<img src="http://netdna.coolthings.com/wp-content/uploads/2014/09/stacked-hong-kong-peter-stewart-1.jpg" />
-	<p>Lorem ipsum dolor sit amet</p>
-	</div>
-
-
-	<div class="boximg">
-	<img src="https://templated.co/items/demos/visualize/images/thumbs/02.jpg" />
-	<p>Lorem ipsum dolor sit amet</p>
-	</div>
-
-	</div>
-	<hr />
-	<p class="footer" align="center"></p>
-</div>
+    <div class="tripple">
+      <div class="boximg">
+        <img src="http://25.media.tumblr.com/tumblr_m411ji0JVd1qib5bvo1_500.jpg" />
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+      <div class="boximg">
+        <img src="https://templated.co/items/demos/visualize/images/thumbs/05.jpg" />
+         <p>Lorem ipsum dolor sit amet</p>
+      </div>
+    </div>
+    <div class="tripple">
+      <div class="boximg">  
+        <img src="https://templated.co/items/demos/visualize/images/thumbs/06.jpg" />
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+      <div class="boximg">          
+        <img src="https://templated.co/items/demos/visualize/images/thumbs/07.jpg"/>
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+    </div>
+    <div class="tripple">
+      <div class="boximg">
+        <img src="https://templated.co/items/demos/visualize/images/thumbs/03.jpg" />
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+      <div class="boximg">
+        <img src="http://netdna.coolthings.com/wp-content/uploads/2014/09/stacked-hong-kong-peter-stewart-1.jpg" />
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+      <div class="boximg">
+        <img src="https://templated.co/items/demos/visualize/images/thumbs/02.jpg" />
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+    </div>
+    <hr />
+       <p class="footer" align="center"></p>
+  </div>
 </template>
 <style>
 

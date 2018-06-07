@@ -2,7 +2,6 @@
     <div class="container mt-4">
       <div class="row">
         <div class="col-md-12 col-md-offset-1">
-
             <div class="panel panel-default panel-table">
               <div class="panel-heading">
                 <div class="row">
@@ -26,7 +25,6 @@
                     </tr> 
                   </thead>
                   <tbody id="myTable">
-                
                           <tr v-for="trip in trips">
                             <td align="center">
                               <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
@@ -39,8 +37,7 @@
                                 <td>{{trip.dayMoney}}</td>
                                 <td>{{trip.hostDay}}</td>
                                 <td>{{trip.year1}}</br
-                                  >{{trip.year2}}</td>
-                              
+                                  >{{trip.year2}}</td>      
                 </tr>
               </tbody>
             </table>
@@ -78,17 +75,11 @@ data(){
   },
  }
 }
-    /*ready: function () {
     
-    var _this = this
-    websitesRef.on('value', function(snapshot){
-      _this.postLink = snapshot.val()
-    }
-  */
-
 
 
 </script>
+
 <style>
   @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 

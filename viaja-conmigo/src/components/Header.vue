@@ -1,7 +1,6 @@
 <template>
   <nav class="navbar navbar-light static-top row">
     <div class="container-fluid ">
-      <div class="col-12 col-md-12 col-sm-12 "></div>
         <a href="/" class="title navbar-brand "><img src="src/assets/logo1.png" class="img-fluid" alt="Responsive image" height="50px" width="50px"></a>
         <h2 class="first-title">Viaja-conmigo</h2>
           <div class="user-tools form-group mt-1">
@@ -20,7 +19,7 @@
       			</ul>
         </div>
   		</div>   
-     </div>
+    </div>
   </nav>
 </template>
 
@@ -46,7 +45,7 @@ box-shadow: inset 0 -1px 0 0 #ffffff0d, 0 1px 6px rgba(0,0,0,.1);
 font-family: 'Shadows Into Light', cursive;
 font-size: 28px;
 position: relative;
-left: -137px;;
+left: -170px;
 top: 3px;
 color: black;
 
@@ -58,9 +57,11 @@ position: relative;
 top: 7px;
 left: -25px;
 }
+
 .header-top{
 
 }
+
 a{
 color:black;
 

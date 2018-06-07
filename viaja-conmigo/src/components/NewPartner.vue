@@ -6,13 +6,9 @@
 			<h4 class=" principal-title mb-2 ml-3 mt-0"> Compartir viajes, para vivir experiencias únicas</h4>
 			</div>
 		</div>
-
 		<form class="searching mb-5">
 			<h5 class="ml-8">Busca a tu compañero ideal</h5>
-	
-	
      <div class=" form-group row">
-     	<!--<input type="range" name="points" min="0" max="50">-->
       	<select class="col-sm-6 col-12 col-md-6 form-control  border rounded" v-model="newPartner.cityOrigin">
           <option value="">¿De que pais eres?</option>
           <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
@@ -30,14 +26,12 @@
           <option v-for="(city_obj, city) in cities" :value="city" >{{city}}</option>
          </select>
      </div>
-
      <div class="form-group row">
 		      <select class="col-sm-6 form-control  border rounded" v-model="newPartner.sexSelected">
             <option value="">¿Genero de tu compañer@?</option>
             <option v-for="(user_obj, user) in userSex" :value="user" >{{user}}</option>
 		       </select>
      </div>
-
       <div class=" form-group row">
         <select class="col-sm-6 form-control  border rounded" v-model="newPartner.language">
           <option class="options" value="">¿Que idioma te gustaría que hablara tu compañer@?</option>
@@ -56,40 +50,19 @@
           <option v-for="(ho_obj, ho) in host" :value="ho" >{{ho}}</option>
          </select>
      </div>
-		
-		 <div class="form-group row mb-5" >
-<input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newPartner.year1">
-<p class="mr-3 ml-3 mt-2"> - </p>
-<input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newPartner.year2">
-		 	
-        </select>-->
-		<button :disabled="sending" class="col-1 btn btn-2 ml-5 " type="button" v-on:click.prevent="addFilters">Buscar </button>
-		</div>
-		
-	</form>	
-	<!--
-	<section class="content-2 row mt-5">
-			<div class=" title-2 col-md-12 mb-5">
-				<h1 class="text-center text-end">Experiencias de otros viajeros </h1>
-				<h5 class=" title-3 text-center">Inspirate </h5>
+			<div class="form-group row mb-5" >
+					<input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newPartner.year1">
+					<p class="mr-3 ml-3 mt-2"> - </p>
+					<input type="date"  class=" col-sm-2 form-control" placeholder="Fecha de nacimiento" required autofocus v-model="newPartner.year2">
+					<button :disabled="sending" class="col-1 btn btn-2 ml-5 " type="button" v-on:click.prevent="addFilters">Buscar </button>
 			</div>
-			
-			<div class="photos row">
-				<div class="col-md-4">
-				<img src="src/assets/image-1.jpeg" alt="" class="img-fluid rounded">
-			</div>
-			<div class="col-md-4">
-					<img src="src/assets/image-2.jpeg" alt="" class="img-fluid rounded" >
-				</div>
-				<div class="col-md-4">
-					<img src="src/assets/image-4.jpeg" alt="" class="img-fluid rounded" >
-				</div>
-			</div>
-	</section>-->
-</div>
+		</form>	
+	</div>
 
 </template>
+
 <script>
+
 var moment = require ('moment')
 import {db} from '../firebase'
 import {storage} from '../firebase'
@@ -429,143 +402,122 @@ export default{
 			this.newPartner.year1='';
 			this.newPartner.year2='';
 			
-
-
-			
 		}) 
 
-			  
-		
 		this.$router.push({name: 'shareLink', params:{ newPartner: this.newPartner}}) 
 	},
-	
-	 
-   
-// 	   
-// }
 	
 
 	}
 }
-	
-
-
-
-	
+		
 </script>
+
 <style>
 @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 
 @import url('https://fonts.googleapis.com/css?family=Alef');
 
 h1{
-	  font-weight: 800;
-    font-size: 29px;
-    letter-spacing: -0.6px;
-    color: black;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
-    border-bottom: 1px solid #e4e4e4;
+font-weight: 800;
+font-size: 29px;
+letter-spacing: -0.6px;
+color: black;
+font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+border-bottom: 1px solid #e4e4e4;
 }
 
 .subtitle{
-	  font-weight: 700;
-    font-size: 28px;
-    letter-spacing: -0.6px;
-    color: #484848;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
-    position: relative;
-    top:10px;
-    left:130px;
+font-weight: 700;
+font-size: 28px;
+letter-spacing: -0.6px;
+color: #484848;
+font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+position: relative;
+top:10px;
+left:130px;
 }
 
 h5{
 
-	font-family: 'Shadows Into Light', cursive;
-	
-    color: black;
-    position: relative;
-    right: 535px;
+font-family: 'Shadows Into Light', cursive;
+
+color: black;
+position: relative;
+right: 535px;
 
 }
 .title-3{
-	font-size:25px;
-	font-size: 25px;
-  position: relative;
-  top: -135px;
-  left: 10px;
+font-size:25px;
+font-size: 25px;
+position: relative;
+top: -135px;
+left: 10px;
 }
 .principal-title{
-	font-family: 'Shadows Into Light', cursive;
-	font-size: 40px;
-	position: relative;
-  top: -27px;
-  left: 184px;
-  color:black;
+font-family: 'Shadows Into Light', cursive;
+font-size: 40px;
+position: relative;
+top: -27px;
+left: 184px;
+color:black;
 }
 
 .searching{
-	position: relative;
-  top: -32px;
-  left: 39px;
-	
-	
+position: relative;
+top: -32px;
+left: 39px;
+
 }
 
 .text-end{
-	  text-align: center!important;
-    position: relative;
-    top: -130px;
-    left: 27px;
+text-align: center!important;
+position: relative;
+top: -130px;
+left: 27px;
 }
 
 .photos{
-	  background-color: #eeeeeea1;
-    /* opacity: 1.8; */
-    max-width: 92%;
-    margin: -13px auto;
-    padding: 20px 30px;
-    width: 1487px;
-    position: relative;
-    top: -146px;
+background-color: #eeeeeea1;
+/* opacity: 1.8; */
+max-width: 92%;
+margin: -13px auto;
+padding: 20px 30px;
+width: 1487px;
+position: relative;
+top: -146px;
 }
-    
-
-
 
 .btn {
-    flex: 1 1 auto;
-    /* margin: 10px; */
-    /* padding: 30px; */
-    text-align: center;
-    /* text-transform: uppercase; */
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2); */
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
- }
-
-/* Demo Stuff End -> */
-
-/* <- Magic Stuff Start */
+flex: 1 1 auto;
+/* margin: 10px; */
+/* padding: 30px; */
+text-align: center;
+/* text-transform: uppercase; */
+transition: 0.5s;
+background-size: 200% auto;
+color: white;
+/* text-shadow: 0px 0px 10px rgba(0,0,0,0.2); */
+box-shadow: 0 0 20px #eee;
+border-radius: 10px;
+}
 
 .btn:hover {
-  background-position: right center; /* change the direction of the change here */
+background-position: right center; /* change the direction of the change here */
 }
 
 .btn-2 {
-  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
 
 .features-icons{
-	position: relative;
-	top:40px;
+position: relative;
+top:40px;
 }
 
 .content-2{
-	position: relative;
-  top: 115px;
+position: relative;
+top: 115px;
 }
 	
 </style>

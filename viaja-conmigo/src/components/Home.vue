@@ -1,13 +1,10 @@
 <template>
+
 	<div>
 <pp-New></pp-New>	
 <pp-Carousel></pp-Carousel>
 	</div>
-
-
 	
-
-
 </template>
 
 <script>

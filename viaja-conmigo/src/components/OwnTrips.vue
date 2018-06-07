@@ -17,7 +17,7 @@
 				   	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio odit voluptatem animi saepe suscipit neque quod delectus tempora iusto quisquam minima eligendi, laudantium deleniti placeat omnis voluptate expedita esse vel?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis quo minus reiciendis error, amet, obcaecati delectus esse eligendi dolore quam ullam officia nostrum quas repudiandae qui aliquam numquam magni et.</p>
 				 </div>
 				 <div class="col-md-4 mb-5">
-				  <img class="image-1 img-fluid  img-rounded" src="src/assets/image-1.jpeg"> 	
+				  <img class="image-1 img-fluid  img-rounded" src="src/assets/image-1.jpeg">
 				 </div>
 			</div>
 				<div class="row">
